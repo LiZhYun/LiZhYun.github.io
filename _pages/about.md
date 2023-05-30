@@ -20,7 +20,7 @@ I am a fourth-year doctoral student at the University of Electronic Science and 
 
 My research interest lies in (Multi-Agent) Reinforcement Learning. Previously, I primarily worked on cooperation among agents and application of MARL. I am currently conducting a one-year visit at the [Aalto Robot Learning Lab](https://rl.aalto.fi/) in Aalto University.
 
-<!-- I will be graduated at July 2024 and open for job opportunity. -->
+<!-- I will be graduated at July 2024 and open for postdoc. -->
 
 ----
 
