@@ -9,26 +9,25 @@ social: true
 years: [2023, 2022, 2021]
 ---
 
-Master in Computer Science <br/>
-Student, Beijing Institute of Technology <br/>
+Ph.D. in Computer Science <br/>
+Student, University of Electronic Science and Technology of China <br/>
 <a href="assets/pdf/resume.pdf" target="_blank"><b>Resume</b></a> |
-<a href="https://zeqiang-lai.github.io/blog/" target="_blank"><b>Blog</b></a>
+<a href="https://LiZhYun.github.io/blog/" target="_blank"><b>Blog</b></a>
 
 ----
 
-I am a third year graduate student at Beijing Institute of Technology, advised by [Prof. Ying Fu](https://ying-fu.github.io/publication.html).
+I am a fourth-year doctoral student at the University of Electronic Science and Technology of China, advised by [Prof. Lijun Wu](https://www.researchgate.net/profile/Lijun-Wu-4).
 
-My research interest lies in the optimization and computer vision. Previously, I primarily worked on diffusion models, proximal algorithm modeling, and image restoration. I also gained experience in some high-level vision tasks during the internship at [OpenGVLab](https://github.com/OpenGVLab).
+My research interest lies in (Multi-Agent) Reinforcement Learning. Previously, I primarily worked on cooperation among agents and application of MARL. I am currently conducting a one-year visit at the [Aalto Robot Learning Lab](https://rl.aalto.fi/) in Aalto University.
 
-<!-- I will be graduated at July 2023 and open for job opportunity. -->
+<!-- I will be graduated at July 2024 and open for job opportunity. -->
 
 ----
 
 ##### News
 
-- May 2023: Created two funny demos for image generation and editing, take a look at [Anything2Image](https://github.com/Zeqiang-Lai/Anything2Image) and [DragGAN](https://github.com/Zeqiang-Lai/DragGAN).
-- May 2023: [Delta-Prox](https://github.com/princeton-computational-imaging/Delta-Prox) is accepted by SIGGRAPH TOG.
-- Jan 2022: [DPHSIR](https://github.com/Zeqiang-Lai/DPHSIR) is accepted by Neurocomputing.
+- Nov 2022: Conducting a one-year visit at the [Aalto Robot Learning Lab](https://rl.aalto.fi/) in Aalto University..
+- Sept 2022: [OCRA](https://ieeexplore.ieee.org/document/9888778) is accepted by IEEE Transactions on Network and Service Management.
 
 ----
 
@@ -42,23 +41,19 @@ My research interest lies in the optimization and computer vision. Previously, I
 
 ##### Experiences
 
-- 2022-5 ~ Now: Research intern at [Shanghai AI laboratory](https://www.shlab.org.cn/), advised by [Wenhai Wang](https://whai362.github.io/).
-- 2019-7 ~ 2020-3: Algorithm intern at [Kuaishou Technology](https://www.kuaishou.com/en), Y-Tech.
+- 2022-11 ~ Now: Ph.D. visitor at [Aalto Robot Learning Lab](https://rl.aalto.fi/), advised by [Joni Pajarinen](https://scholar.google.com/citations?user=-2fJStwAAAAJ).
 
 ----
 
-##### Services
+<!-- ##### Services
 
 **Journal reviewer**: TIP / TGRS
 
 **Conference reviewer**: CVPR 2022 / ICCV 2021 / PBDL 2021 / ACMMM 2021
 
-----
+---- -->
 
 ##### Awards
 
-- National Scholarship China (2022)
-- Academic Scholarship of Beijing Institute of Technology (2020,2022)
-- Honorable Mention, Interdisciplinary Contest in Modeling (2019)
-- First Prize of China Undergraduate Mathematical Contest in Modeling, Beijing (2018)
-- Scholarship for Outstanding Students (2017,2018)
+- China Scholarship Council (2023)
+- Academic Scholarship of University of Electronic Science and Technology of China (2019-2022)

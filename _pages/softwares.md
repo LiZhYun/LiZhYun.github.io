@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 title: Softwares
 permalink: /softwares/
@@ -164,4 +164,4 @@ nav_order: 2
 
 </div>
 
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script> -->
