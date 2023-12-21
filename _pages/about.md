@@ -6,7 +6,7 @@ description:
 
 news: true
 social: true
-# years: [2023, 2022, 2021]
+years: [2024, 2023, 2022, 2021]
 ---
 
 Ph.D. in Computer Science <br/>
