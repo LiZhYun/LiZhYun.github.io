@@ -9,16 +9,15 @@ social: true
 years: [2025, 2024, 2023, 2022, 2021]
 ---
 
-Ph.D. in Computer Science <br/>
-Student, University of Electronic Science and Technology of China <br/>
+Postdoctoral Research Fellow, Aalto University <br/>
 <a href="assets/pdf/Li_Zhiyuan_CV.pdf" target="_blank"><b>Curriculum Vitae</b></a> |
 <a href="blog/" target="_blank"><b>Blog</b></a>
 
 ----
 
-I am a doctoral student at the University of Electronic Science and Technology of China, advised by [Prof. Lijun Wu](https://www.researchgate.net/profile/Lijun-Wu-4). Before that, I received my B.S. in Computer Science and Technology from North China Electric Power University in 2015.
+My principal research interest lies in autonomous agents, aiming to enable machines to automatically and continuously learn from their environment and achieve robust collaboration/cooperation with other agents. My expertise encompasses a focused exploration of deep reinforcement learning and multi-agent systems, applied extensively to address dynamic decision-making problems, including network optimization. The outcomes of these research efforts have been published in esteemed international journals and conferences, including notable contributions such as AAAI, Neural Networks, etc. Moreover, I am deeply intrigued by the challenges of artificial general intelligence, particularly in the realms of generalization and zero-shot coordination. My future research aims to integrate research in Reinforcement Learning, Imitation Learning, and Robotics to foster integrative research streams leading to the development of Intelligent Systems where agents perceive their environment, can learn from the data they collect, coordinate their actions to achieve a common goal and adapt to the changing world around them.
 
-My principal research interest lies in autonomous agents, aiming to enable machines to automatically and continuously learn from their environment and achieve robust collaboration/cooperation with other agents. My expertise encompasses a focused exploration of deep reinforcement learning and multi-agent systems, applied extensively to address dynamic decision-making problems, including network optimization. The outcomes of these research efforts have been published in esteemed international journals and conferences, including notable contributions such as AAAI, Neural Networks, etc. Moreover, I am deeply intrigued by the challenges of artificial general intelligence, particularly in the realms of generalization and zero-shot coordination. My future research aims to integrate research in Reinforcement Learning, Imitation Learning, and Robotics to foster integrative research streams leading to the development of Intelligent Systems where agents perceive their environment, can learn from the data they collect, coordinate their actions to achieve a common goal and adapt to the changing world around them. Previously, I conducted a one-year visit at the [Aalto Robot Learning Lab](https://rl.aalto.fi/) in Aalto University, advised by [Prof. Joni Pajarinen](https://people.aalto.fi/joni.pajarinen).
+Previously, I completed my Ph.D. in computer science at the [University of Electronic Science and Technology of China](https://en.uestc.edu.cn/) and my B.S. in computer science at [North China Electric Power University](https://english.ncepu.edu.cn/). I also spent time at Aalto University as part of the [Aalto Robot Learning Lab](https://rl.aalto.fi/).
 
 ----
 
@@ -47,13 +46,13 @@ My principal research interest lies in autonomous agents, aiming to enable machi
 
 ----
 
-<!-- ##### Services
+##### Services
 
-**Journal reviewer**: TIP / TGRS
+<!--**Journal reviewer**: TIP / TGRS -->
 
-**Conference reviewer**: CVPR 2022 / ICCV 2021 / PBDL 2021 / ACMMM 2021
+**Conference reviewer**: NeurIPS 2024 / IJCNN 2024
 
----- -->
+----
 
 ##### Awards
 
