@@ -51,7 +51,7 @@ Previously, I completed my Ph.D. in computer science at the [University of Elect
 
 <!--**Journal reviewer**: TIP / TGRS -->
 
-**Conference reviewer**: NeurIPS 2024 / IJCNN 2024
+**Conference reviewer**: NeurIPS 2024 / ICLR 2025
 
 ----
 
