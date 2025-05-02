@@ -23,6 +23,7 @@ Previously, I completed my Ph.D. in computer science at the [University of Elect
 
 ##### News
 
+- May 2025: Learning Progress Driven Multi-Agent Curriculum is accepted by ICML2025.
 - Dec 2024: AgentMixer: Multi-Agent Correlated Policy Factorization is accepted by AAAI 2025 (Oral).
 - Jun 2024: I will be joining [Aalto Robot Learning Lab](https://rl.aalto.fi/) as a postdoc.
 - May 2024: Optimistic Multi-Agent Policy Gradient is accepted by ICML2024.
