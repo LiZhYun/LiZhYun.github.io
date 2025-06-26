@@ -10,7 +10,7 @@ years: [2025, 2024, 2023, 2022, 2021]
 ---
 
 Postdoctoral Research Fellow, Aalto University <br/>
-<a href="[assets/pdf/Li_Zhiyuan_CV.pdf](https://github.com/user-attachments/files/20933771/Li_Zhiyuan_CV.pdf)" target="_blank"><b>Curriculum Vitae</b></a> |
+<a href="https://github.com/user-attachments/files/20933771/Li_Zhiyuan_CV.pdf" target="_blank"><b>Curriculum Vitae</b></a> |
 <a href="blog/" target="_blank"><b>Blog</b></a>
 
 ----
