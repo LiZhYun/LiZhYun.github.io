@@ -23,6 +23,7 @@ Previously, I completed my Ph.D. in computer science at the [University of Elect
 
 ##### News
 
+- May 2026: Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence is accepted by ICML2026.
 - May 2025: Learning Progress Driven Multi-Agent Curriculum is accepted by ICML2025.
 - Dec 2024: AgentMixer: Multi-Agent Correlated Policy Factorization is accepted by AAAI 2025 (Oral).
 - Jun 2024: I will be joining [Aalto Robot Learning Lab](https://rl.aalto.fi/) as a postdoc.
@@ -52,7 +53,7 @@ Previously, I completed my Ph.D. in computer science at the [University of Elect
 
 <!--**Journal reviewer**: TIP / TGRS -->
 
-**Conference reviewer**: NeurIPS 2024 / ICLR 2025
+**Conference reviewer**: NeurIPS / ICLR / ICML / AAAI / ECCV
 
 ----
 
