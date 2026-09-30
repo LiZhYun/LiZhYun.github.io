@@ -1,0 +1,191 @@
+# Newest year first; list order is display order. Fields: spec §4.
+# After adding or removing entries, update the counts in README.md ("Run the checks").
+
+- title: "Why Cross-Skeleton Retargeting Is Non-Identifiable: Structural Limits of Generative Motion Models"
+  authors: [Zhiyuan Li, Wenyan Yang, Pekka Marttinen, Joni Pajarinen]
+  venue: NeurIPS 2026
+  venue_key: neurips
+  type: Conference
+  year: 2026
+  selected: true
+  new: true
+  thumb: retargeting.webp
+  tldr: "Under standard generative objectives, sparse multi-body motion data cannot pin down which source-to-target map a cross-skeleton retargeting model learns, so the paper proposes Source-Instance Fidelity (SIF) to test whether generated motion actually follows its source clip."
+  links:
+    paper: https://arxiv.org/abs/2609.37297
+    code: https://github.com/LiZhYun/NeurIPS2026-Cross-Skeleton-Retargeting
+    project: https://cross-skeleton-retargeting.netlify.app/
+
+- title: Sparsely Supervised Diffusion
+  authors: [Wenshuai Zhao, Zhiyuan Li, Yi Zhao, Mohammad Hassan Vali, Martin Trapp, Joni Pajarinen, Juho Kannala, Arno Solin]
+  venue: NeurIPS 2026
+  venue_key: neurips
+  type: Conference
+  year: 2026
+  selected: false
+  thumb: sparsely-supervised-diffusion.webp
+  tldr: "A simple masking strategy for diffusion training that targets spatially inconsistent generation: masking up to 98% of pixels keeps FID competitive, avoids training instability on small datasets and reduces memorization."
+  links:
+    paper: https://arxiv.org/abs/2602.02699
+    project: https://sites.google.com/view/sparsely-supervised-diffusion/home
+
+- title: "Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence"
+  authors: [Zhiyuan Li, Rongzhen Zhao, Wenyan Yang, Wenshuai Zhao, Pekka Marttinen, Joni Pajarinen]
+  venue: ICML 2026
+  venue_key: icml
+  type: Conference
+  year: 2026
+  selected: true
+  thumb: rethinking-ocl.webp
+  tldr: "Learned temporal predictors in video object-centric models mostly just keep slot indices stable, so seeding slots from saliency peaks in frozen DINOv2 features and Hungarian-matching them across frames does the same job with no learned temporal parameters."
+  links:
+    paper: https://proceedings.mlr.press/v306/li26js.html
+    arxiv: https://arxiv.org/abs/2605.03650
+    code: https://github.com/LiZhYun/ICML2026-RethinkingOCL
+    project: https://magenta-sherbet-85b101.netlify.app/
+
+- title: Closed-Loop Vision-Language Planning for Multi-Agent Coordination
+  authors: [Zhiyuan Li, Wenshuai Zhao, Joni Pajarinen]
+  venue: SE@AAMAS 2026
+  venue_key: aamas
+  type: Workshop
+  year: 2026
+  selected: false
+  thumb: compass.webp
+  tldr: "Each agent plans with a vision-language model in a closed loop, writes and reuses code skills, and shares observations through multi-hop communication; evaluated on SMACv2."
+  links:
+    paper: https://arxiv.org/abs/2502.10148
+    code: https://github.com/LiZhYun/COMPASS-SE-AAMAS
+    project: https://lizhyun.github.io/COMPASS/
+
+- title: "Bridging the Embodiment Gap: Disentangled Cross-Embodiment Video Editing"
+  authors: [Zhiyuan Li, Wenyan Yang, Wenshuai Zhao, Yue Ma, Yuanpeng Tu, Pekka Marttinen, Joni Pajarinen]
+  venue: arXiv 2026
+  venue_key: arxiv
+  type: Preprint
+  year: 2026
+  selected: true
+  thumb: egoxedit.webp
+  tldr: "Turns an egocentric human manipulation video into a robot demonstration video by separating task and embodiment codes that condition a frozen video diffusion model."
+  links:
+    paper: https://arxiv.org/abs/2605.03637
+    code: https://github.com/LiZhYun/EgoXEdit
+
+- title: Do We Really Need the Default Recipe for Video Object-Centric Learning?
+  authors: [Zhiyuan Li, Rongzhen Zhao, Wenyan Yang, Wenshuai Zhao, Arno Solin, Juho Kannala, Pekka Marttinen, Joni Pajarinen]
+  venue: IEEE TPAMI
+  venue_key: tpami
+  type: Under review
+  year: 2026
+  selected: false
+  thumb: default-recipe.webp
+  tldr: "A controlled study showing that neither a learned temporal predictor nor a frozen backbone is always necessary for video object-centric learning: what matters is how object identity is carried across frames, and whether an adapted encoder stays tied to a frozen pretrained feature target."
+  links:
+    code: https://github.com/LiZhYun/ICML2026-RethinkingOCL
+
+- title: Learning Progress Driven Multi-Agent Curriculum
+  authors: [Wenshuai Zhao, Zhiyuan Li, Joni Pajarinen]
+  venue: ICML 2025
+  venue_key: icml
+  type: Conference
+  year: 2025
+  selected: false
+  thumb: lpmc.webp
+  tldr: "Uses the number of agents as a curriculum variable and advances the curriculum with a TD-error-based learning-progress measure, outperforming state-of-the-art baselines on three sparse-reward MARL benchmarks."
+  links:
+    paper: https://proceedings.mlr.press/v267/zhao25o.html
+    arxiv: https://arxiv.org/abs/2205.10016
+    code: https://github.com/wenshuaizhao/spmarl
+    project: https://wenshuaizhao.github.io/spmarl/
+
+- title: "AgentMixer: Multi-Agent Correlated Policy Factorization"
+  authors: [Zhiyuan Li, Wenshuai Zhao, Lijun Wu, Joni Pajarinen]
+  venue: AAAI 2025
+  venue_key: aaai
+  type: Conference
+  award: Oral
+  year: 2025
+  selected: true
+  thumb: agentmixer.webp
+  tldr: "A centralized joint policy correlates agents' actions, while a mode-consistency constraint keeps it executable by decentralized, partially observing agents."
+  links:
+    paper: https://doi.org/10.1609/aaai.v39i17.34048
+    arxiv: https://arxiv.org/abs/2401.08728
+
+- title: Adaptive graph attention networks with interactive learning for attributed graph clustering
+  authors: [Weiwei Duan, Luping Ji, Lijun Wu, Qi Deng, Zhiyuan Li]
+  venue: EAAI 2025
+  venue_key: eaai
+  type: Journal
+  year: 2025
+  selected: false
+  tldr: "Adaptive graph attention networks with interactive learning (AGAT-IL) for clustering the nodes of attributed graphs."
+  links:
+    paper: https://doi.org/10.1016/j.engappai.2025.111574
+    code: https://github.com/MrDec/AGAT-IL
+
+- title: Multi-agent neighborhood coordinated and holistic optimized actor-critic framework for adaptive traffic signal control
+  authors: [Qi Deng, Lijun Wu, Zhiyuan Li, Kaile Su, Wei Wu, Weiwei Duan]
+  venue: Applied Intelligence 2025
+  venue_key: apin
+  type: Journal
+  year: 2025
+  selected: false
+  tldr: "NcHo-AC frames adaptive traffic signal control as a competitive-cooperative game and combines neighborhood coordination with a mean-field approximation, so multi-agent actor-critic learning scales to large traffic networks."
+  links:
+    paper: https://doi.org/10.1007/s10489-025-06758-x
+    oa: https://research.aalto.fi/en/publications/multi-agent-neighborhood-coordinated-and-holistic-optimized-actor/
+
+- title: Optimistic Multi-Agent Policy Gradient
+  authors: [Wenshuai Zhao, Yi Zhao, Zhiyuan Li, Juho Kannala, Joni Pajarinen]
+  venue: ICML 2024
+  venue_key: icml
+  type: Conference
+  year: 2024
+  selected: false
+  thumb: optimappo.webp
+  tldr: "Clipping the advantage to remove negative values gives optimistic multi-agent policy-gradient updates that counter relative overgeneralization, outperforming strong baselines on 13 of 19 tasks and matching them on the rest."
+  links:
+    paper: https://proceedings.mlr.press/v235/zhao24v.html
+    arxiv: https://arxiv.org/abs/2311.01953
+    code: https://github.com/wenshuaizhao/optimappo
+    project: https://wenshuaizhao.github.io/optimappo/
+
+- title: Backpropagation Through Agents
+  authors: [Zhiyuan Li, Wenshuai Zhao, Lijun Wu, Joni Pajarinen]
+  venue: AAAI 2024
+  venue_key: aaai
+  type: Conference
+  year: 2024
+  selected: true
+  thumb: bpta.webp
+  tldr: "Later agents in an auto-regressive multi-agent policy send gradients back to earlier agents through their actions."
+  links:
+    paper: https://doi.org/10.1609/aaai.v38i12.29277
+    arxiv: https://arxiv.org/abs/2401.12574
+    code: https://github.com/LiZhYun/BackPropagationThroughAgents
+
+- title: Coordination as Inference in Multi-Agent Reinforcement Learning
+  authors: [Zhiyuan Li, Lijun Wu, Kaile Su, Wei Wu, Yulin Jing, Tong Wu, Weiwei Duan, Xiaofeng Yue, Xiyi Tong, Yizhou Han]
+  venue: Neural Networks 2024
+  venue_key: nn
+  type: Journal
+  year: 2024
+  selected: true
+  thumb: dms.webp
+  tldr: "Independent learners infer teammates' intentions from observed actions and choose whom to coordinate with — no centralized critic, no communication."
+  links:
+    paper: https://doi.org/10.1016/j.neunet.2024.106101
+    code: https://github.com/LiZhYun/DMS
+
+- title: Online Coordinated NFV Resource Allocation via Novel Machine Learning Techniques
+  authors: [Zhiyuan Li, Lijun Wu, Xiangyun Zeng, Xiaofeng Yue, Yulin Jing, Wei Wu, Kaile Su]
+  venue: IEEE TNSM 2023
+  venue_key: tnsm
+  type: Journal
+  year: 2023
+  selected: false
+  thumb: ocra.webp
+  tldr: "A parallel multi-agent deep RL framework that performs all three stages of NFV resource allocation jointly and online by generating an embedding subgraph per request."
+  links:
+    paper: https://doi.org/10.1109/TNSM.2022.3205900

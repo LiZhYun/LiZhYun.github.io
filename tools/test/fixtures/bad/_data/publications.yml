@@ -1,0 +1,22 @@
+- title: Broken A
+  authors: [Zhiyuan Li]
+  venue: X 2024
+  venue_key: icmlx
+  type: Talk
+  year: 2024
+  selected: true
+  new: true
+  thumb: nope.webp
+  tldr: "First sentence. Second sentence."
+  links: {paper: "http://example.org/a"}
+- title: Broken B
+  authors: [Zhiyuan Li]
+  venue: ICML 2025
+  venue_key: icml
+  type: Conference
+  year: 2025
+  selected: false
+  new: true
+  thumb: nope.webp
+  tldr: "Fine."
+  links: {paper: "https://example.org/b"}

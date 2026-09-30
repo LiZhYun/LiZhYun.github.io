@@ -1,0 +1,12 @@
+name: Zhiyuan Li
+name_zh: 李志圆
+pinyin: [Li]
+role: Postdoctoral Researcher
+org: Aalto
+location: Espoo
+email: x@example.org
+scholar_url: https://example.org
+bio: ["x"]
+chips: [{label: CV, href: /nope.pdf}]
+interests: [{label: RL}]
+scholar: {citations: 1, h_index: 1, updated: 2026-09-30}

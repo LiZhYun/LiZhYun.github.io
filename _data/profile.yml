@@ -1,0 +1,34 @@
+name: Zhiyuan Li
+name_zh: 李志圆
+pinyin: [Lǐ, Zhì, Yuán]
+role: Postdoctoral Researcher
+org: Aalto Robot Learning Lab, Aalto University
+location: Espoo, Finland
+email: zhiyuan.li@aalto.fi
+scholar_url: https://scholar.google.com/citations?user=1GYbhX0AAAAJ
+bio:
+  - >-
+    I am a postdoctoral researcher at the <a href="https://rl.aalto.fi/">Aalto Robot Learning Lab</a>,
+    Aalto University, working with Prof. <a href="https://scholar.google.com/citations?user=-2fJStwAAAAJ">Joni Pajarinen</a>.
+    I study how learning agents coordinate — with each other and with the physical world: multi-agent
+    reinforcement learning, object-centric representations of video, and transfer from human video to robot embodiments.
+  - >-
+    I received my Ph.D. in Computer Science and Technology from the University of Electronic Science and
+    Technology of China (2024) and my B.S. from North China Electric Power University (2019). During my Ph.D.
+    I spent a year at Aalto as a CSC-funded visiting researcher.
+chips:
+  - {icon: email, label: "zhiyuan.li(at)aalto.fi", href: "mailto:zhiyuan.li@aalto.fi", mono: true}
+  - {icon: scholar, label: Google Scholar, href: "https://scholar.google.com/citations?user=1GYbhX0AAAAJ"}
+  - {icon: github, label: GitHub, href: "https://github.com/LiZhYun"}
+  - {icon: orcid, label: ORCID, href: "https://orcid.org/0000-0002-1804-3485"}
+  - {icon: doc, label: CV, href: /assets/pdf/Li_Zhiyuan_CV.pdf}
+  - {icon: doc, label: 中文简历, href: /assets/pdf/Li_Zhiyuan_CV_zh.pdf, lang: zh}
+interests:
+  - {icon: agents, label: Multi-Agent Systems}
+  - {icon: loop, label: Reinforcement Learning}
+  - {icon: robot, label: Robotics}
+  - {icon: layers, label: Foundation Models}
+scholar:
+  citations: 91
+  h_index: 6
+  updated: 2026-09-30

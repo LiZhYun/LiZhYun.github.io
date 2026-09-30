@@ -1,0 +1,44 @@
+# Newest first. date is a quoted "YYYY-MM" or "YYYY". At most one item has new: true.
+# Items with older: true stay hidden until "Show older" is clicked.
+- date: "2026-09"
+  emoji: "🎉"
+  new: true
+  html: 'Two papers accepted to NeurIPS 2026: <a href="https://arxiv.org/abs/2609.37297">cross-skeleton motion retargeting</a>, and <a href="https://arxiv.org/abs/2602.02699">Sparsely Supervised Diffusion</a>.'
+- date: "2026"
+  emoji: "🧑‍⚖️"
+  html: "Serving as Area Chair for ICLR 2027."
+- date: "2026-05"
+  emoji: "🎉"
+  html: '<a href="https://proceedings.mlr.press/v306/li26js.html">Rethinking Temporal Consistency in Video Object-Centric Learning</a> accepted to ICML 2026.'
+- date: "2026-05"
+  emoji: "🎤"
+  html: '<a href="https://arxiv.org/abs/2502.10148">COMPASS</a> accepted as a lightning talk at the SE@AAMAS 2026 workshop in Paphos, Cyprus.'
+- date: "2025-05"
+  emoji: "🎉"
+  html: '<a href="https://proceedings.mlr.press/v267/zhao25o.html">Learning Progress Driven Multi-Agent Curriculum</a> accepted to ICML 2025.'
+- date: "2024-12"
+  emoji: "🏆"
+  html: '<a href="https://doi.org/10.1609/aaai.v39i17.34048">AgentMixer</a> accepted to AAAI 2025 as an oral presentation.'
+- date: "2024-08"
+  emoji: "🏠"
+  html: 'Joined the <a href="https://rl.aalto.fi/">Aalto Robot Learning Lab</a> as a postdoctoral researcher.'
+- date: "2024-05"
+  emoji: "🎉"
+  older: true
+  html: '<a href="https://proceedings.mlr.press/v235/zhao24v.html">Optimistic Multi-Agent Policy Gradient</a> accepted to ICML 2024.'
+- date: "2024-01"
+  emoji: "🎉"
+  older: true
+  html: '<a href="https://doi.org/10.1016/j.neunet.2024.106101">Coordination as Inference in MARL</a> accepted by Neural Networks.'
+- date: "2023-12"
+  emoji: "🎉"
+  older: true
+  html: '<a href="https://doi.org/10.1609/aaai.v38i12.29277">Backpropagation Through Agents</a> accepted to AAAI 2024.'
+- date: "2022-11"
+  emoji: "✈️"
+  older: true
+  html: "Began a one-year visit at the Aalto Robot Learning Lab."
+- date: "2022-09"
+  emoji: "🎉"
+  older: true
+  html: '<a href="https://doi.org/10.1109/TNSM.2022.3205900">OCRA</a> accepted by IEEE Transactions on Network and Service Management.'

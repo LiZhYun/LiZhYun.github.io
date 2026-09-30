@@ -1,0 +1,12 @@
+venue_key 'icmlx'
+type 'Talk'
+must start with https://
+entries have new: true (max 1)
+tldr must be exactly one sentence
+is newer than the entry above
+thumb nope.webp not found
+date must be a quoted string
+items have new: true (max 1)
+pinyin must have one syllable per character
+/nope.pdf not found
+highlights.yml: missing
