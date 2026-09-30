@@ -1,4 +1,1 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://LiZhYun.github.io/sitemap.xml
+Sitemap: https://lizhyun.github.io/sitemap.xml
