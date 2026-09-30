@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D · Rich — Zhiyuan Li homepage mockup</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&amp;family=Noto+Sans+SC:wght@300;400&amp;family=JetBrains+Mono:wght@400&amp;family=Noto+Color+Emoji&amp;display=swap">
+<style>
+:root{
+  --accent:#1b66c4;
+  --accent-ink:#124f9c;
+  --accent-wash:#eef4fc;
+  --ink:#161b26;
+  --text:#2f3642;
+  --text-2:#3d4450;
+  --muted:#5a6270;
+  --muted-2:#646c79;
+  --card-line:#e4e7ec;
+  --hair:#dde2e8;
+  --row-line:#eceef2;
+  --box-bg:#f8f9fb;
+  --box-line:#e8ebf0;
+  --sans:'Lato','Helvetica Neue',Arial,sans-serif,'Noto Color Emoji';
+  --zh:'Noto Sans SC','PingFang SC','Noto Sans CJK SC',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --emoji:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif;
+  --shadow-card:0 1px 2px rgba(16,24,40,.04),0 4px 12px rgba(16,24,40,.03);
+  --shadow-lift:0 2px 4px rgba(16,24,40,.05),0 14px 32px rgba(16,24,40,.09);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{background:#f6f7f9}
+body{margin:0;font-family:var(--sans);background:#f6f7f9;color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+button{font:inherit;cursor:pointer}
+p{margin:0}
+
+/* Emoji: one consistent colour font, 1.05em, small gap to the text that follows */
+.emo{font-family:var(--emoji);font-size:1.05em;line-height:1;font-style:normal;font-weight:400;letter-spacing:0;display:inline-block;flex:none}
+.emo-lead{margin-right:.4em}
+
+/* ---------- page shell ---------- */
+.page{position:relative;width:1440px;min-height:100vh;overflow:hidden;background:#f6f7f9}
+.bg-dots{position:absolute;left:0;top:0;width:1440px;height:760px;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(30,41,59,.13) 1px,transparent 1.3px);background-size:22px 22px;background-position:11px 11px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 45%,transparent 100%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 45%,transparent 100%)}
+.glow{position:absolute;z-index:0;pointer-events:none;border-radius:50%}
+.glow-blue{left:-260px;top:-240px;width:980px;height:860px;background:radial-gradient(closest-side,rgba(27,102,196,.22),rgba(27,102,196,.08) 55%,rgba(27,102,196,0) 100%)}
+.glow-teal{left:860px;top:-160px;width:860px;height:780px;background:radial-gradient(closest-side,rgba(20,150,140,.17),rgba(20,150,140,.05) 60%,rgba(20,150,140,0) 100%)}
+
+/* ---------- navbar ---------- */
+.nav{position:relative;z-index:2;height:56px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(20,30,50,.08);box-shadow:0 1px 3px rgba(16,24,40,.04);display:flex;justify-content:center}
+.nav-in{width:1110px;height:55px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:baseline;gap:8px;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--ink)}
+.brand-en{font-weight:700;font-size:18px;line-height:24px}
+.brand-zh{font-family:var(--zh);font-weight:400;font-size:15px;line-height:24px;color:var(--muted)}
+.nav-right{display:flex;align-items:center;gap:8px;height:55px}
+.nav-links{display:flex;align-items:stretch;gap:8px;height:55px}
+.nv{height:55px;padding:0 12px;display:flex;align-items:center;font-size:15px;font-weight:400;color:#505866;transition:color .15s ease}
+.nv:hover{color:var(--ink);text-decoration:none}
+.nv[aria-current="page"]{font-weight:700;color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.nav-sep{width:1px;height:20px;background:#dfe3e9;margin:0 8px 0 4px}
+.theme-toggle{width:34px;height:34px;padding:0;border-radius:50%;border:1px solid var(--hair);background:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;box-shadow:0 1px 2px rgba(16,24,40,.06);transition:border-color .15s ease,background-color .15s ease,transform .2s var(--ease)}
+.theme-toggle:hover{border-color:#b9cff0;background:var(--accent-wash);transform:rotate(-12deg)}
+.theme-toggle .emo{font-size:16px}
+
+/* ---------- main column ---------- */
+main{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:24px;padding-top:32px;padding-bottom:40px}
+.card{width:1110px;background:#fff;border:1px solid var(--card-line);border-radius:12px;box-shadow:var(--shadow-card);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 48px;display:flex;flex-direction:column;gap:32px}
+.hero-top{display:flex;align-items:flex-start;gap:48px}
+.hero-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:24px}
+.hero-head{display:flex;flex-direction:column;gap:8px}
+.hero h1{margin:0;display:flex;align-items:baseline;gap:16px;font-weight:300;font-size:42px;line-height:48px;letter-spacing:-.005em;color:var(--ink)}
+.zh-name{font-family:var(--zh);font-weight:300;font-size:28px;line-height:48px;letter-spacing:.06em;color:var(--muted)}
+.zh-name ruby{ruby-position:over;ruby-align:center}
+.zh-name rt{font-family:'Lato','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:11.5px;line-height:1;letter-spacing:.02em;color:#6b7280;padding-bottom:2px}
+.hero-sub{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 24px;font-size:15.5px;line-height:24px;color:#3a414d}
+.hero-sub .loc{color:#505866}
+.bio{display:flex;flex-direction:column;gap:16px;font-size:16px;line-height:26px;color:var(--text)}
+.avatar{flex:none;width:160px;height:160px;padding:4px;border-radius:50%;border:1px solid var(--hair);background:#fff;box-shadow:0 2px 10px rgba(16,24,40,.06)}
+.avatar img{display:block;width:150px;height:150px;border-radius:50%;object-fit:cover;background:#f4f6f9}
+
+.hero-boxes{display:flex;flex-direction:column;gap:16px}
+.box{display:flex;flex-direction:column;gap:12px;padding:16px 20px;background:var(--box-bg);border:1px solid var(--box-line);border-radius:10px}
+.box-title{display:flex;align-items:baseline;gap:8px;font-size:14px;line-height:20px;font-weight:700;color:#232935}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 13px;border:1px solid var(--hair);border-radius:999px;background:#fff;color:#2b3240;font-size:13.5px;line-height:20px;white-space:nowrap}
+.chip svg{flex:none}
+a.chip{transition:border-color .15s ease,color .15s ease,background-color .15s ease}
+a.chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.chip .mono{font-family:var(--mono);font-size:12.5px}
+.chip .zh{font-family:var(--zh);font-size:13px;font-weight:400}
+.chip .emo{font-size:14px}
+.chip strong{font-weight:700;color:var(--ink)}
+.chip .dot-sep{color:#6b7280;margin:0 1px}
+.chip-hl{background:linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%)}
+
+/* ---------- two-column card ---------- */
+.cols{padding:36px 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start}
+.col{display:flex;flex-direction:column;gap:32px}
+.blk{display:flex;flex-direction:column;gap:16px}
+.sec{margin:0;display:flex;align-items:baseline;gap:8px;font-size:17px;line-height:24px;font-weight:700;color:var(--ink)}
+.orgs{display:flex;flex-direction:column;gap:16px}
+.org{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:center}
+.logo{width:40px;height:40px;padding:4px;border-radius:9px;border:1px solid #e3e7ec;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04);display:flex;align-items:center;justify-content:center}
+.logo img{display:block;width:30px;height:30px;object-fit:contain}
+.org-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.org-name{font-size:15px;line-height:22px;color:var(--ink)}
+.org-meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:13px;line-height:20px;color:var(--muted)}
+.org-meta em{flex:none;font-style:italic;color:var(--muted-2)}
+
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:baseline;gap:10px;font-size:14px;line-height:22px;color:var(--text)}
+.row-emo{width:20px;text-align:center}
+.row-dot{flex:none;width:20px;height:22px;display:flex;align-items:center;justify-content:center;align-self:flex-start}
+.row-dot::before{content:"";width:5px;height:5px;border-radius:50%;background:#8a919c}
+.row-text{flex:1;min-width:0}
+.row-text strong{font-weight:700;color:var(--ink)}
+.row-date{flex:none;font-style:italic;font-size:13px;color:var(--muted-2)}
+
+/* ---------- section header (news, publications) ---------- */
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 40px;border-bottom:1px solid var(--row-line);min-height:57px}
+.card-head h2{margin:0;display:flex;align-items:baseline;gap:8px;font-size:18px;line-height:24px;font-weight:700;color:var(--ink)}
+.head-l{display:flex;align-items:center;gap:16px}
+
+/* ---------- news ---------- */
+.news-body{display:flex;flex-direction:column;padding:12px 40px 16px}
+.yr-grp{display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 16px;align-items:start}
+.yr-grp + .yr-grp{border-top:1px solid #eef0f3}
+.yr{padding-top:8px;font-size:14px;line-height:22px;font-weight:700;color:#505866}
+.n-item{display:flex;align-items:baseline;gap:12px;padding:8px 0}
+.n-emo{width:22px;text-align:center}
+.n-text{flex:1;min-width:0;font-size:15px;line-height:22px;color:#2a303c}
+.n-date{flex:none;width:88px;text-align:right;font-style:italic;font-size:13.5px;line-height:22px;color:var(--muted-2)}
+.new-pill{display:inline-block;vertical-align:1px;margin-left:8px;height:18px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font-size:10.5px;line-height:18px;font-weight:700;letter-spacing:.08em}
+
+/* ---------- publications ---------- */
+.shields{display:flex;align-items:center;gap:8px}
+.shield{display:inline-flex;height:20px;border-radius:4px;overflow:hidden;font-size:11.5px;line-height:20px;font-weight:700;color:#fff;box-shadow:0 1px 1px rgba(16,24,40,.08);transition:filter .15s ease,box-shadow .15s ease}
+.shield:hover{color:#fff;text-decoration:none;filter:brightness(1.08);box-shadow:0 2px 6px rgba(16,24,40,.14)}
+.shield .l{display:inline-flex;align-items:center;gap:5px;padding:0 7px;background:#4b5563}
+.shield .r{padding:0 7px;background:var(--accent)}
+.shield .emo{font-size:12px}
+.head-sep{width:1px;height:20px;background:#e1e5ea}
+.seg{display:flex;align-items:center;gap:2px;padding:3px;background:#f1f3f6;border:1px solid #e2e6eb;border-radius:8px}
+.seg button{height:28px;border:0;border-radius:6px;font-family:var(--sans);font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.seg .on{padding:0 12px;background:#fff;color:var(--accent);box-shadow:0 1px 2px rgba(16,24,40,.12)}
+.seg .off{padding:0 10px 0 12px;background:transparent;color:#444c59}
+.seg .count{height:18px;padding:0 6px;border-radius:999px;background:#e1e5ea;color:var(--text-2);font-size:11.5px;line-height:18px;font-weight:700}
+.head-link{display:flex;align-items:center;gap:6px;font-size:14px;line-height:22px;font-weight:700}
+
+.pub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:24px 40px;border-bottom:1px solid var(--row-line);transition:background-color .2s ease}
+.pub:hover{background:#f9fbfe}
+.thumb-wrap{position:relative;width:200px;height:134px}
+.thumb{display:block;width:200px;height:134px;padding:6px;background:#fff;border:1px solid #e3e7ec;border-radius:6px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.thumb:hover{text-decoration:none}
+.pub:hover .thumb{border-color:#d3dae3;box-shadow:0 2px 8px rgba(16,24,40,.06)}
+.thumb img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .35s var(--ease)}
+.pub:hover .thumb img{transform:scale(1.03)}
+.hot{position:absolute;top:-8px;left:-8px;z-index:1;display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 9px 0 7px;border-radius:999px;background:#c2410c;color:#fff;font-size:11.5px;line-height:22px;font-weight:700;letter-spacing:.02em;box-shadow:0 2px 6px rgba(194,65,12,.28),0 0 0 2px #fff}
+.hot .emo{font-size:12px}
+
+.pub-body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pub h3{margin:0;font-size:19px;line-height:26px;font-weight:400;color:var(--ink)}
+.tl{color:var(--ink);transition:color .15s ease}
+.tl:hover{color:var(--accent);text-decoration:none}
+.authors{font-size:13.5px;line-height:20px;color:var(--text-2)}
+.authors strong{font-weight:700;color:var(--ink)}
+mark.corr{margin-left:6px;padding:1px 6px;border-radius:4px;background:#fff5c2;color:#4a3d00;font-size:12.5px;font-style:italic;white-space:nowrap}
+mark.corr i{font-style:italic}
+.meta{display:flex;align-items:center;gap:8px;height:20px}
+.venue{height:20px;padding:0 8px;border-radius:5px;color:#fff;font-size:12px;line-height:20px;font-weight:700;letter-spacing:.01em}
+.v-neurips{background:#3b0f70}
+.v-icml{background:#1e3a8a}
+.v-aaai{background:#0d7c72}
+.v-arxiv{background:#b31b1b}
+.v-nn{background:#166534}
+.type{height:18px;padding:0 7px;border-radius:999px;border:1px solid #cfd5dd;background:#fff;color:#505866;font-size:11px;line-height:16px;font-weight:700;letter-spacing:.02em}
+.oral{display:inline-flex;align-items:center;gap:4px;height:20px;padding:0 8px;border-radius:999px;border:1px solid #f3cf7a;background:#fef3c7;color:#92400e;font-size:11.5px;line-height:18px;font-weight:700;letter-spacing:.02em}
+.oral .emo{font-size:12px}
+.tldr{font-size:13.5px;line-height:20px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px;padding-top:2px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px 0 10px;border:1px solid #d6dce4;border-radius:999px;background:#fff;color:var(--accent);font-size:13px;line-height:20px;font-weight:700;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.btn:hover{background:var(--accent-wash);border-color:#b9cff0;color:var(--accent-ink);text-decoration:none}
+.btn .emo{font-size:13.5px}
+.all-link{display:flex;justify-content:flex-end;padding:16px 40px}
+.all-link a{font-size:14px;line-height:22px;font-weight:700}
+
+footer{width:1110px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13.5px;line-height:22px;color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  .card,.pub,.thumb,.thumb img,.btn,.chip,.shield,.theme-toggle,.tl,.nv{transition:none !important}
+  .card:hover{transform:none}
+  .pub:hover .thumb img{transform:none}
+  .theme-toggle:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Background: soft accent glow + fading dot grid behind the hero only -->
+  <div class="bg-dots" aria-hidden="true"></div>
+  <div class="glow glow-blue" aria-hidden="true"></div>
+  <div class="glow glow-teal" aria-hidden="true"></div>
+
+  <!-- Top navbar -->
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="#top">
+        <span class="brand-en">Zhiyuan Li</span>
+        <span class="brand-zh" lang="zh">李志圆</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nv" href="#top" aria-current="page">Home</a>
+          <a class="nv" href="#publications">Publications</a>
+        </nav>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="emo" aria-hidden="true">🌙</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO CARD -->
+    <section id="top" class="card hero">
+      <div class="hero-top">
+        <div class="hero-text">
+          <div class="hero-head">
+            <h1>
+              <span>Zhiyuan Li</span>
+              <span class="zh-name" lang="zh"><ruby>李<rt>Lǐ</rt>志<rt>Zhì</rt>圆<rt>Yuán</rt></ruby></span>
+            </h1>
+            <div class="hero-sub">
+              <span><span class="emo emo-lead" aria-hidden="true">🤖</span>Postdoctoral Researcher @ Aalto Robot Learning Lab, Aalto University</span>
+              <span class="loc"><span class="emo emo-lead" aria-hidden="true">📍</span>Espoo, Finland</span>
+            </div>
+          </div>
+          <div class="bio">
+            <p>I am a postdoctoral researcher at the <a href="https://rl.aalto.fi/">Aalto Robot Learning Lab</a>, Aalto University, working with Prof. <a href="https://rl.aalto.fi/">Joni Pajarinen</a>. I study how learning agents coordinate — with each other and with the physical world: multi-agent reinforcement learning, object-centric representations of video, and transfer from human video to robot embodiments.</p>
+            <p>I received my Ph.D. in Computer Science and Technology from the University of Electronic Science and Technology of China (2024) and my B.S. from North China Electric Power University (2019). During my Ph.D. I spent a year at Aalto as a CSC-funded visiting researcher.</p>
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="assets/avatar.png" alt="Portrait of Zhiyuan Li">
+        </div>
+      </div>
+
+      <div class="hero-boxes">
+        <!-- Social & Contacts -->
+        <div class="box">
+          <div class="box-title"><span class="emo" aria-hidden="true">📬</span><span>Social &amp; Contacts</span></div>
+          <div class="chips">
+            <a class="chip" href="mailto:zhiyuan.li@aalto.fi">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+              <span class="mono">zhiyuan.li(at)aalto.fi</span>
+            </a>
+            <a class="chip" href="https://scholar.google.com/citations?user=1GYbhX0AAAAJ">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9.5 10-5 10 5-10 5z"/><path d="M6 11.5v4.8c3.3 2.3 8.7 2.3 12 0v-4.8"/><path d="M22 9.5v5"/></svg>
+              <span>Google Scholar</span>
+            </a>
+            <a class="chip" href="https://github.com/LiZhYun">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.050-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="chip" href="https://orcid.org/0000-0002-1804-3485">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8.5 10.5V16"/><path d="M8.5 7.8v.01"/><path d="M11.5 16v-5.5h1.8a2.75 2.75 0 0 1 0 5.5z"/></svg>
+              <span>ORCID</span>
+            </a>
+            <a class="chip" href="assets/pdf/Li_Zhiyuan_CV.pdf">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+              <span>CV</span>
+            </a>
+            <a class="chip" href="assets/pdf/Li_Zhiyuan_CV_zh.pdf">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+              <span class="zh" lang="zh">中文简历</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Research Interests -->
+        <div class="box">
+          <div class="box-title"><span class="emo" aria-hidden="true">🔬</span><span>Research Interests</span></div>
+          <div class="chips">
+            <span class="chip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#505866"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18.5" r="2.2"/><circle cx="19" cy="18.5" r="2.2"/><path d="M10.9 7 6.1 16.5M13.1 7l4.8 9.5M7.2 18.5h9.6"/></svg>
+              <span>Multi-Agent Systems</span>
+            </span>
+            <span class="chip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#505866"><path d="M20 11.5A8 8 0 0 0 5.8 7"/><path d="M5 3.5v4h4"/><path d="M4 12.5A8 8 0 0 0 18.2 17"/><path d="M19 20.5v-4h-4"/></svg>
+              <span>Reinforcement Learning</span>
+            </span>
+            <span class="chip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#505866"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4.5V8"/><circle cx="12" cy="3.5" r="1"/><path d="M9.5 13v.5M14.5 13v.5"/><path d="M2.5 12.5v3M21.5 12.5v3"/></svg>
+              <span>Robotics</span>
+            </span>
+            <span class="chip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#505866"><path d="m12 3 9 4.5-9 4.5-9-4.5z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>
+              <span>Foundation Models</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="box">
+          <div class="box-title"><span class="emo" aria-hidden="true">✨</span><span>Highlights</span></div>
+          <div class="chips">
+            <span class="chip chip-hl"><span class="emo" aria-hidden="true">🧑‍⚖️</span><span><strong>Area Chair</strong> <span class="dot-sep">·</span> ICLR 2027</span></span>
+            <span class="chip chip-hl"><span class="emo" aria-hidden="true">🎤</span><span><strong>Oral</strong> <span class="dot-sep">·</span> AAAI 2025</span></span>
+            <span class="chip chip-hl"><span class="emo" aria-hidden="true">📄</span><span><strong>2 papers</strong> <span class="dot-sep">·</span> NeurIPS 2026</span></span>
+            <span class="chip chip-hl"><span class="emo" aria-hidden="true">🧑‍🏫</span><span><strong>Head TA</strong> <span class="dot-sep">·</span> Aalto RL course (243 students)</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO-COLUMN CARD -->
+    <section class="card cols">
+
+      <!-- Left column -->
+      <div class="col">
+        <div class="blk">
+          <h2 class="sec"><span class="emo" aria-hidden="true">🎓</span><span>Education</span></h2>
+          <div class="orgs">
+            <div class="org">
+              <span class="logo"><img src="assets/logo_uestc_s.png" alt="UESTC logo"></span>
+              <div class="org-body">
+                <span class="org-name">University of Electronic Science and Technology of China</span>
+                <div class="org-meta"><span>Ph.D. in Computer Science and Technology</span><em>Sep 2019 – Jul 2024</em></div>
+              </div>
+            </div>
+            <div class="org">
+              <span class="logo"><img src="assets/logo_ncepu_s.png" alt="NCEPU logo"></span>
+              <div class="org-body">
+                <span class="org-name">North China Electric Power University</span>
+                <div class="org-meta"><span>B.S. in Computer Science and Technology</span><em>Sep 2015 – Jul 2019</em></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blk">
+          <h2 class="sec"><span class="emo" aria-hidden="true">💼</span><span>Experience</span></h2>
+          <div class="orgs">
+            <div class="org">
+              <span class="logo"><img src="assets/logo_aalto_mark.png" alt="Aalto University logo"></span>
+              <div class="org-body">
+                <span class="org-name">Aalto Robot Learning Lab, Aalto University</span>
+                <div class="org-meta"><span>Postdoctoral Researcher · Host: Prof. Joni Pajarinen</span><em>Aug 2024 – Present</em></div>
+              </div>
+            </div>
+            <div class="org">
+              <span class="logo"><img src="assets/logo_aalto_mark.png" alt="Aalto University logo"></span>
+              <div class="org-body">
+                <span class="org-name">Aalto University</span>
+                <div class="org-meta"><span>Visiting Ph.D. Researcher (CSC-funded)</span><em>Nov 2022 – Dec 2023</em></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="col">
+        <div class="blk">
+          <h2 class="sec"><span class="emo" aria-hidden="true">🏆</span><span>Honors &amp; Awards</span></h2>
+          <div class="rows">
+            <div class="row"><span class="emo row-emo" aria-hidden="true">🏅</span><span class="row-text">China Scholarship Council (CSC) Scholarship</span><em class="row-date">2022</em></div>
+            <div class="row"><span class="emo row-emo" aria-hidden="true">🎖️</span><span class="row-text">Academic Scholarship, UESTC</span><em class="row-date">2019–2022</em></div>
+            <div class="row"><span class="emo row-emo" aria-hidden="true">🏅</span><span class="row-text">Honorable Mention, Mathematical Contest in Modeling (MCM)</span><em class="row-date">2017</em></div>
+          </div>
+        </div>
+
+        <div class="blk">
+          <h2 class="sec"><span class="emo" aria-hidden="true">🤝</span><span>Service</span></h2>
+          <div class="rows">
+            <div class="row"><span class="row-dot" aria-hidden="true"></span><span class="row-text"><strong>Area Chair:</strong> ICLR 2027</span></div>
+            <div class="row"><span class="row-dot" aria-hidden="true"></span><span class="row-text"><strong>Reviewer:</strong> NeurIPS, ICML, ICLR, AAAI, ECCV, AAMAS</span></div>
+          </div>
+        </div>
+
+        <div class="blk">
+          <h2 class="sec"><span class="emo" aria-hidden="true">🧑‍🏫</span><span>Teaching</span></h2>
+          <div class="rows">
+            <div class="row"><span class="row-dot" aria-hidden="true"></span><span class="row-text">Main teaching assistant, <strong>ELEC-E8125 Reinforcement Learning</strong>, Aalto University — 243 students; coordinated a 12-person TA team.</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEWS CARD -->
+    <section id="news" class="card">
+      <div class="card-head">
+        <h2><span class="emo" aria-hidden="true">📰</span><span>News</span></h2>
+      </div>
+      <div class="news-body">
+
+        <div class="yr-grp">
+          <span class="yr">2026</span>
+          <div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🎉</span>
+              <span class="n-text">Two papers accepted to NeurIPS 2026: <a href="https://arxiv.org/abs/2609.37297">cross-skeleton motion retargeting</a>, and Sparsely Supervised Diffusion.<span class="new-pill">NEW</span></span>
+              <em class="n-date">Sep 2026</em>
+            </div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🧑‍⚖️</span>
+              <span class="n-text">Serving as Area Chair for ICLR 2027.</span>
+              <em class="n-date">2026</em>
+            </div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🎉</span>
+              <span class="n-text"><a href="https://proceedings.mlr.press/v306/li26js.html">Rethinking Temporal Consistency in Video Object-Centric Learning</a> accepted to ICML 2026.</span>
+              <em class="n-date">May 2026</em>
+            </div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🎤</span>
+              <span class="n-text">Presented COMPASS at the SE@AAMAS 2026 workshop in Paphos, Cyprus.</span>
+              <em class="n-date">May 2026</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="yr-grp">
+          <span class="yr">2025</span>
+          <div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🎉</span>
+              <span class="n-text">Learning Progress Driven Multi-Agent Curriculum accepted to ICML 2025.</span>
+              <em class="n-date">May 2025</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="yr-grp">
+          <span class="yr">2024</span>
+          <div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🏆</span>
+              <span class="n-text"><a href="https://doi.org/10.1609/aaai.v39i17.34048">AgentMixer</a> accepted to AAAI 2025 as an oral presentation.</span>
+              <em class="n-date">Dec 2024</em>
+            </div>
+            <div class="n-item">
+              <span class="emo n-emo" aria-hidden="true">🏠</span>
+              <span class="n-text">Joined the <a href="https://rl.aalto.fi/">Aalto Robot Learning Lab</a> as a postdoctoral researcher.</span>
+              <em class="n-date">Aug 2024</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED PUBLICATIONS CARD -->
+    <section id="publications" class="card">
+      <div class="card-head">
+        <div class="head-l">
+          <h2><span class="emo" aria-hidden="true">📝</span><span>Selected Publications</span></h2>
+          <div class="shields">
+            <a class="shield" href="https://scholar.google.com/citations?user=1GYbhX0AAAAJ" aria-label="Google Scholar citations: 91"><span class="l"><span class="emo" aria-hidden="true">🎓</span>Citations</span><span class="r">91</span></a>
+            <a class="shield" href="https://scholar.google.com/citations?user=1GYbhX0AAAAJ" aria-label="Google Scholar h-index: 6"><span class="l">h-index</span><span class="r">6</span></a>
+          </div>
+          <span class="head-sep" aria-hidden="true"></span>
+          <div class="seg" role="group" aria-label="Publication filter">
+            <button type="button" class="on" aria-pressed="true">Selected</button>
+            <button type="button" class="off" aria-pressed="false"><span>All</span><span class="count">14</span></button>
+          </div>
+        </div>
+        <a class="head-link" href="https://scholar.google.com/citations?user=1GYbhX0AAAAJ">
+          <span>Google Scholar</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Paper 1 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://cross-skeleton-retargeting.netlify.app/"><img src="assets/retarget_panorama.jpg" alt="Figure from Why Cross-Skeleton Retargeting Is Non-Identifiable"></a>
+          <span class="hot"><span class="emo" aria-hidden="true">🔥</span>New</span>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://arxiv.org/abs/2609.37297">Why Cross-Skeleton Retargeting Is Non-Identifiable: Structural Limits of Generative Motion Models</a></h3>
+          <p class="authors"><strong>Zhiyuan Li</strong>, Wenyan Yang, Pekka Marttinen, Joni Pajarinen</p>
+          <div class="meta">
+            <span class="venue v-neurips">NeurIPS 2026</span>
+            <span class="type">Conference</span>
+          </div>
+          <p class="tldr">Sparse multi-body motion data cannot pin down which source-to-target map a retargeting model learns. We propose Source-Instance Fidelity (SIF) to test whether generated motion actually follows its source clip.</p>
+          <div class="links">
+            <a class="btn" href="https://arxiv.org/abs/2609.37297"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://github.com/LiZhYun/NeurIPS2026-Cross-Skeleton-Retargeting"><span class="emo" aria-hidden="true">💻</span>Code</a>
+            <a class="btn" href="https://cross-skeleton-retargeting.netlify.app/"><span class="emo" aria-hidden="true">🌐</span>Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paper 2 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://magenta-sherbet-85b101.netlify.app/"><img src="assets/rocl_fig1_left.jpg" alt="Figure from Rethinking Temporal Consistency in Video Object-Centric Learning"></a>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://proceedings.mlr.press/v306/li26js.html">Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence</a></h3>
+          <p class="authors"><strong>Zhiyuan Li</strong>, Rongzhen Zhao, Wenyan Yang, Wenshuai Zhao, Pekka Marttinen, Joni Pajarinen</p>
+          <div class="meta">
+            <span class="venue v-icml">ICML 2026</span>
+            <span class="type">Conference</span>
+          </div>
+          <p class="tldr">Learned temporal predictors mostly just keep slot indices stable. Seeding slots from saliency peaks and matching them across frames does the same job with no learned temporal parameters.</p>
+          <div class="links">
+            <a class="btn" href="https://proceedings.mlr.press/v306/li26js.html"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2605.03650"><span class="emo" aria-hidden="true">📜</span>arXiv</a>
+            <a class="btn" href="https://github.com/LiZhYun/ICML2026-RethinkingOCL"><span class="emo" aria-hidden="true">💻</span>Code</a>
+            <a class="btn" href="https://magenta-sherbet-85b101.netlify.app/"><span class="emo" aria-hidden="true">🌐</span>Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paper 3 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://arxiv.org/abs/2605.03637"><img src="assets/egox.jpg" alt="Figure from Bridging the Embodiment Gap"></a>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://arxiv.org/abs/2605.03637">Bridging the Embodiment Gap: Disentangled Cross-Embodiment Video Editing</a></h3>
+          <p class="authors"><strong>Zhiyuan Li†</strong>, Wenyan Yang, Wenshuai Zhao, Yue Ma, Yuanpeng Tu, Pekka Marttinen, Joni Pajarinen<mark class="corr">(† <i>corresponding author</i>)</mark></p>
+          <div class="meta">
+            <span class="venue v-arxiv">arXiv 2026</span>
+            <span class="type">Preprint</span>
+          </div>
+          <p class="tldr">Turns an egocentric human manipulation video into a robot demonstration by separating task and embodiment codes that condition a frozen video diffusion model.</p>
+          <div class="links">
+            <a class="btn" href="https://arxiv.org/abs/2605.03637"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://github.com/LiZhYun/EgoXEdit"><span class="emo" aria-hidden="true">💻</span>Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paper 4 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://doi.org/10.1609/aaai.v39i17.34048"><img src="assets/agentmixer.jpg" alt="Figure from AgentMixer"></a>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://doi.org/10.1609/aaai.v39i17.34048">AgentMixer: Multi-Agent Correlated Policy Factorization</a></h3>
+          <p class="authors"><strong>Zhiyuan Li</strong>, Wenshuai Zhao, Lijun Wu, Joni Pajarinen</p>
+          <div class="meta">
+            <span class="venue v-aaai">AAAI 2025</span>
+            <span class="type">Conference</span>
+            <span class="oral"><span class="emo" aria-hidden="true">🏆</span>Oral</span>
+          </div>
+          <p class="tldr">A centralized joint policy correlates agents’ actions, while a mode-consistency constraint keeps it executable by decentralized, partially observing agents.</p>
+          <div class="links">
+            <a class="btn" href="https://doi.org/10.1609/aaai.v39i17.34048"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2401.08728"><span class="emo" aria-hidden="true">📜</span>arXiv</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paper 5 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://doi.org/10.1609/aaai.v38i12.29277"><img src="assets/bpta.jpg" alt="Figure from Backpropagation Through Agents"></a>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://doi.org/10.1609/aaai.v38i12.29277">Backpropagation Through Agents</a></h3>
+          <p class="authors"><strong>Zhiyuan Li</strong>, Wenshuai Zhao, Lijun Wu, Joni Pajarinen</p>
+          <div class="meta">
+            <span class="venue v-aaai">AAAI 2024</span>
+            <span class="type">Conference</span>
+          </div>
+          <p class="tldr">Later agents in an auto-regressive multi-agent policy send gradients back to earlier agents through their actions.</p>
+          <div class="links">
+            <a class="btn" href="https://doi.org/10.1609/aaai.v38i12.29277"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://arxiv.org/abs/2401.12574"><span class="emo" aria-hidden="true">📜</span>arXiv</a>
+            <a class="btn" href="https://github.com/LiZhYun/BackPropagationThroughAgents"><span class="emo" aria-hidden="true">💻</span>Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paper 6 -->
+      <article class="pub">
+        <div class="thumb-wrap">
+          <a class="thumb" href="https://doi.org/10.1016/j.neunet.2024.106101"><img src="assets/dms.jpg" alt="Figure from Coordination as Inference in Multi-Agent Reinforcement Learning"></a>
+        </div>
+        <div class="pub-body">
+          <h3><a class="tl" href="https://doi.org/10.1016/j.neunet.2024.106101">Coordination as Inference in Multi-Agent Reinforcement Learning</a></h3>
+          <p class="authors"><strong>Zhiyuan Li†</strong>, Lijun Wu, Kaile Su, Wei Wu, Yulin Jing, Tong Wu, Weiwei Duan, Xiaofeng Yue, Xiyi Tong, Yizhou Han<mark class="corr">(† <i>corresponding author</i>)</mark></p>
+          <div class="meta">
+            <span class="venue v-nn">Neural Networks 2024</span>
+            <span class="type">Journal</span>
+          </div>
+          <p class="tldr">Independent learners infer teammates’ intentions from observed actions and choose whom to coordinate with — no centralized critic, no communication.</p>
+          <div class="links">
+            <a class="btn" href="https://doi.org/10.1016/j.neunet.2024.106101"><span class="emo" aria-hidden="true">📄</span>Paper</a>
+            <a class="btn" href="https://github.com/LiZhYun/DMS"><span class="emo" aria-hidden="true">💻</span>Code</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="all-link">
+        <a href="https://scholar.google.com/citations?user=1GYbhX0AAAAJ">All publications on Google Scholar »</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <em>Last updated: Sep 2026</em>
+      <span>© 2026 Zhiyuan Li</span>
+    </footer>
+  </main>
+</div>
+
+</body>
+</html>
