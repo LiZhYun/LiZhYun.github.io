@@ -13,8 +13,8 @@ for p in _posts _pages _projects _bibliography _sass _plugins bin \
          _includes/news.html _layouts/about2.html _layouts/bib.html robots.txt; do
   if [ -e "$p" ]; then echo "FAIL still present: $p"; fail=1; fi
 done
-if git grep -n "polyfill.io" -- . ':!docs' >/dev/null 2>&1; then
-  echo "FAIL polyfill.io still referenced:"; git grep -n "polyfill.io" -- . ':!docs'; fail=1
+if git grep -n "polyfill.io" -- . ':!docs' ':!tools/check-clean.sh' >/dev/null 2>&1; then
+  echo "FAIL polyfill.io still referenced:"; git grep -n "polyfill.io" -- . ':!docs' ':!tools/check-clean.sh'; fail=1
 fi
 grep -qx 'papers/' .gitignore 2>/dev/null || { echo "FAIL papers/ not in .gitignore"; fail=1; }
 git check-ignore -q papers/AAAI2025_AgentMixer.zip || { echo "FAIL papers/*.zip is not ignored"; fail=1; }
