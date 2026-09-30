@@ -1,0 +1,10 @@
+{%- assign c = include.chip -%}
+{%- capture chip_inner -%}
+{%- if c.icon %}{% include icons/{{ c.icon }}.svg %}{% endif -%}
+<span{% if c.mono %} class="mono"{% elsif c.lang == "zh" %} class="zh" lang="zh"{% endif %}>{{ c.label }}</span>
+{%- endcapture -%}
+{%- if c.href -%}
+<a class="chip" href="{{ c.href | relative_url }}">{{ chip_inner }}</a>
+{%- else -%}
+<span class="chip chip-plain">{{ chip_inner }}</span>
+{%- endif -%}

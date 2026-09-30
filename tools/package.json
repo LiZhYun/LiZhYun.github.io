@@ -1,0 +1,8 @@
+{
+  "name": "lizhyun-site-tools",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright-core": "1.63.0"
+  }
+}

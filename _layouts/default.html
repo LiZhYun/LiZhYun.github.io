@@ -2,9 +2,55 @@
 <html lang="{{ site.lang }}">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&amp;family=JetBrains+Mono:wght@400&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400&amp;text=%E6%9D%8E%E5%BF%97%E5%9C%86%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86&amp;display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
 {% seo %}
 </head>
 <body>
+<div class="page">
+  <div class="bg-dots" data-deco aria-hidden="true"></div>
+  <div class="glow glow-blue" data-deco aria-hidden="true"></div>
+  <div class="glow glow-teal" data-deco aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-en">{{ site.data.profile.name }}</span>
+        <span class="brand-zh" lang="zh">{{ site.data.profile.name_zh }}</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nv nv-home" href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
+          <a class="nv" href="{{ '/#publications' | relative_url }}">Publications</a>
+        </nav>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <button type="button" class="theme-toggle" data-theme-toggle hidden aria-label="Switch to dark theme" title="Switch to dark theme"><span class="emo" aria-hidden="true">🌙</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
 {{ content }}
+  </main>
+
+  <footer class="footer">
+    <em>Last updated: {{ site.time | date: "%b %Y" }}</em>
+    <span>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }}</span>
+  </footer>
+</div>
 </body>
 </html>

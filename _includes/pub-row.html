@@ -1,0 +1,29 @@
+{%- assign pub = include.pub -%}
+{%- assign l = pub.links -%}
+{%- if l.paper %}{% assign primary = l.paper %}{% elsif l.arxiv %}{% assign primary = l.arxiv %}{% elsif l.project %}{% assign primary = l.project %}{% else %}{% assign primary = l.code %}{% endif -%}
+{%- if l.project %}{% assign thumb_href = l.project %}{% else %}{% assign thumb_href = primary %}{% endif -%}
+<article class="pub{% unless pub.thumb %} pub-compact{% endunless %}" data-selected="{{ pub.selected }}"{% unless pub.selected %} hidden{% endunless %}>
+  {%- if pub.thumb %}
+  <div class="thumb-wrap">
+    <a class="thumb" href="{{ thumb_href }}" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/img/pubs/' | append: pub.thumb | relative_url }}" alt="" width="400" height="268" loading="lazy" decoding="async"></a>
+    {%- if pub.new %}<span class="hot"><span class="emo" aria-hidden="true">🔥</span>New</span>{% endif %}
+  </div>
+  {%- endif %}
+  <div class="pub-body">
+    <h4 class="pub-title"><a class="tl" href="{{ primary }}">{{ pub.title }}</a></h4>
+    <p class="authors">{% for a in pub.authors %}{% if a == "Zhiyuan Li" %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <div class="meta">
+      <span class="venue v-{{ pub.venue_key }}">{{ pub.venue }}</span>
+      <span class="type">{{ pub.type }}</span>
+      {%- if pub.award %}<span class="oral"><span class="emo" aria-hidden="true">🏆</span>{{ pub.award }}</span>{% endif %}
+    </div>
+    <p class="tldr">{{ pub.tldr }}</p>
+    <div class="links">
+      {%- if l.paper %}<a class="btn" href="{{ l.paper }}"><span class="emo" aria-hidden="true">📄</span>Paper</a>{% endif -%}
+      {%- if l.arxiv %}<a class="btn" href="{{ l.arxiv }}"><span class="emo" aria-hidden="true">📜</span>arXiv</a>{% endif -%}
+      {%- if l.oa %}<a class="btn" href="{{ l.oa }}"><span class="emo" aria-hidden="true">📖</span>Open access</a>{% endif -%}
+      {%- if l.code %}<a class="btn" href="{{ l.code }}"><span class="emo" aria-hidden="true">💻</span>Code</a>{% endif -%}
+      {%- if l.project %}<a class="btn" href="{{ l.project }}"><span class="emo" aria-hidden="true">🌐</span>Project</a>{% endif -%}
+    </div>
+  </div>
+</article>

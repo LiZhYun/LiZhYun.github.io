@@ -1,0 +1,7 @@
+{%- assign n = include.item -%}
+{%- assign month = n.date | slice: 5, 2 -%}
+<li class="n-item"{% if n.older %} data-older hidden{% endif %}>
+  <span class="emo n-emo" aria-hidden="true">{{ n.emoji }}</span>
+  <span class="n-text">{{ n.html }}{% if n.new %}<span class="new-pill">NEW</span>{% endif %}</span>
+  <em class="n-date">{% if month != "" %}{% assign mi = month | plus: 0 | minus: 1 %}{{ include.months[mi] }} {{ n.date | slice: 0, 4 }}{% else %}{{ n.date }}{% endif %}</em>
+</li>

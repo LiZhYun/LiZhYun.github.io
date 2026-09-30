@@ -1,0 +1,7 @@
+<div class="org">
+  <span class="logo"><img src="{{ '/assets/img/logos/' | append: include.logo | relative_url }}" alt="" width="30" height="30"></span>
+  <div class="org-body">
+    <span class="org-name">{{ include.org }}</span>
+    <div class="org-meta"><span>{{ include.role }}{% if include.note %} · {{ include.note }}{% endif %}</span><em>{{ include.dates }}</em></div>
+  </div>
+</div>

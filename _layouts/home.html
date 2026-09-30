@@ -1,4 +1,161 @@
 ---
 layout: default
 ---
-<p>Zhiyuan Li</p>
+{%- assign p = site.data.profile -%}
+{%- assign zh_chars = p.name_zh | split: "" -%}
+<section class="card hero" aria-labelledby="hero-name">
+  <div class="hero-top">
+    <div class="hero-text">
+      <div class="hero-head">
+        <h1 id="hero-name">
+          <span>{{ p.name }}</span>
+          <span class="zh-name" lang="zh"><ruby>{% for ch in zh_chars %}{{ ch }}<rt>{{ p.pinyin[forloop.index0] }}</rt>{% endfor %}</ruby></span>
+        </h1>
+        <div class="hero-sub">
+          <span><span class="emo emo-lead" aria-hidden="true">🤖</span>{{ p.role }} @ {{ p.org }}</span>
+          <span class="loc"><span class="emo emo-lead" aria-hidden="true">📍</span>{{ p.location }}</span>
+        </div>
+      </div>
+      <div class="bio">
+        {%- for para in p.bio %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="avatar">
+      <img src="{{ '/assets/img/avatar.png' | relative_url }}" alt="Avatar of {{ p.name }}" width="150" height="150">
+    </div>
+  </div>
+
+  <div class="hero-boxes">
+    <div class="box">
+      <h2 class="box-title"><span class="emo" aria-hidden="true">📬</span><span>Social &amp; Contacts</span></h2>
+      <div class="chips">
+        {%- for c in p.chips %}
+        {% include chip.html chip=c %}
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="box">
+      <h2 class="box-title"><span class="emo" aria-hidden="true">🔬</span><span>Research Interests</span></h2>
+      <div class="chips">
+        {%- for c in p.interests %}
+        {% include chip.html chip=c %}
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="box">
+      <h2 class="box-title"><span class="emo" aria-hidden="true">✨</span><span>Highlights</span></h2>
+      <div class="chips">
+        {%- for h in site.data.highlights %}
+        <span class="chip chip-hl"><span class="emo" aria-hidden="true">{{ h.emoji }}</span><span><strong>{{ h.bold }}</strong> <span class="dot-sep" aria-hidden="true">·</span> {{ h.rest }}</span></span>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card cols" aria-label="Education, experience, honors, service and teaching">
+  <div class="col">
+    <div class="blk">
+      <h2 class="sec"><span class="emo" aria-hidden="true">🎓</span><span>Education</span></h2>
+      <div class="orgs">
+        {%- for o in site.data.education %}
+        {% include timeline-row.html org=o.institution logo=o.logo role=o.degree dates=o.dates %}
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="blk">
+      <h2 class="sec"><span class="emo" aria-hidden="true">💼</span><span>Experience</span></h2>
+      <div class="orgs">
+        {%- for o in site.data.experience %}
+        {% include timeline-row.html org=o.institution logo=o.logo role=o.role note=o.note dates=o.dates %}
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="blk">
+      <h2 class="sec"><span class="emo" aria-hidden="true">🏆</span><span>Honors &amp; Awards</span></h2>
+      <ul class="rows">
+        {%- for a in site.data.awards %}
+        <li class="row"><span class="emo row-emo" aria-hidden="true">{{ a.emoji }}</span><span class="row-text">{{ a.title }}{% if a.org %}, {{ a.org }}{% endif %}</span><em class="row-date">{{ a.year }}</em></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="blk">
+      <h2 class="sec"><span class="emo" aria-hidden="true">🤝</span><span>Service</span></h2>
+      <ul class="rows">
+        {%- for s in site.data.service %}
+        <li class="row"><span class="row-dot" aria-hidden="true"></span><span class="row-text"><strong>{{ s.label }}:</strong> {{ s.text }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="blk">
+      <h2 class="sec"><span class="emo" aria-hidden="true">🧑‍🏫</span><span>Teaching</span></h2>
+      <ul class="rows">
+        {%- for t in site.data.teaching %}
+        <li class="row"><span class="row-dot" aria-hidden="true"></span><span class="row-text">{{ t.html }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{%- assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," -%}
+{%- assign news_groups = site.data.news | group_by_exp: "n", "n.date | slice: 0, 4" -%}
+{%- assign older_news = site.data.news | where: "older", true -%}
+<section id="news" class="card" aria-labelledby="news-title">
+  <div class="card-head">
+    <h2 id="news-title"><span class="emo" aria-hidden="true">📰</span><span>News</span></h2>
+  </div>
+  <div class="news-body">
+    {%- for g in news_groups %}
+    {%- assign current = g.items | where_exp: "i", "i.older != true" %}
+    <div class="yr-grp"{% if current.size == 0 %} data-older hidden{% endif %}>
+      <span class="yr">{{ g.name }}</span>
+      <ul class="n-list">
+        {%- for n in g.items %}
+        {% include news-row.html item=n months=months %}
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+    {%- if older_news.size > 0 %}
+    <div class="news-more">
+      <button type="button" class="more-btn" data-show-older hidden>Show older</button>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+{%- assign pubs = site.data.publications -%}
+{%- assign sc = p.scholar -%}
+{%- capture asof %}Google Scholar, as of {{ sc.updated | date: "%-d %b %Y" }}{% endcapture -%}
+<section id="publications" class="card" data-pubs aria-labelledby="pubs-title">
+  <div class="card-head pub-head">
+    <div class="ph-title">
+      <h2 id="pubs-title"><span class="emo" aria-hidden="true">📝</span><span data-pub-title>Selected Publications</span></h2>
+      <div class="shields">
+        <a class="shield" href="{{ p.scholar_url }}" title="{{ asof }}" aria-label="Citations: {{ sc.citations }} ({{ asof }})"><span class="l"><span class="emo" aria-hidden="true">🎓</span>Citations</span><span class="r">{{ sc.citations }}</span></a>
+        <a class="shield" href="{{ p.scholar_url }}" title="{{ asof }}" aria-label="h-index: {{ sc.h_index }} ({{ asof }})"><span class="l">h-index</span><span class="r">{{ sc.h_index }}</span></a>
+      </div>
+    </div>
+    <span class="head-sep" aria-hidden="true"></span>
+    <div class="seg" role="group" aria-label="Publication filter" data-pub-filter hidden>
+      <button type="button" data-filter="selected" aria-pressed="true">Selected</button>
+      <button type="button" data-filter="all" aria-pressed="false"><span>All</span><span class="count">{{ pubs.size }}</span></button>
+    </div>
+    <a class="head-link" href="{{ p.scholar_url }}"><span>Google Scholar</span>{% include icons/arrow.svg %}</a>
+  </div>
+  <div class="pub-list">
+    {%- assign pub_years = pubs | group_by: "year" %}
+    {%- for y in pub_years %}
+    <h3 class="pub-year" hidden>{{ y.name }}</h3>
+    {%- for pub in y.items %}
+    {% include pub-row.html pub=pub %}
+    {%- endfor %}
+    {%- endfor %}
+  </div>
+  <div class="all-link"><a href="{{ p.scholar_url }}">All publications on Google Scholar »</a></div>
+</section>
