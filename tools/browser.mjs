@@ -136,7 +136,13 @@ async function screens(browser, base) {
       const page = await ctx.newPage();
       await page.goto(`${base}/`, { waitUntil: 'load' });
       await page.evaluate(() => document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; }));
-      await page.waitForTimeout(1000);
+      // Loading a lazy <img> only guarantees its bytes are fetched; with decoding="async"
+      // the bitmap can still be mid-decode when a screenshot fires. Wait for every image's
+      // decode to actually finish so thumbnails aren't captured blank.
+      await page.evaluate(() => Promise.all(
+        Array.from(document.images).map((img) => (img.decode ? img.decode().catch(() => {}) : Promise.resolve())),
+      ));
+      await page.waitForTimeout(300);
       const file = path.join(OUT, `home-${vp.width}-${scheme}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log(`SHOT ${file}`);
