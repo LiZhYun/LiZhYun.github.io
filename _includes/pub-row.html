@@ -10,7 +10,7 @@
   </div>
   {%- endif %}
   <div class="pub-body">
-    <h4 class="pub-title"><a class="tl" href="{{ primary }}">{{ pub.title }}</a></h4>
+    <h3 class="pub-title"><a class="tl" href="{{ primary }}">{{ pub.title }}</a></h3>
     <p class="authors">{% for a in pub.authors %}{% if a == "Zhiyuan Li" %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
     <div class="meta">
       <span class="venue v-{{ pub.venue_key }}">{{ pub.venue }}</span>

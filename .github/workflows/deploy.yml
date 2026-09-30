@@ -15,9 +15,11 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: ruby/setup-ruby@v1
         with:
@@ -29,9 +31,15 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Check data and colors
+        run: |
+          command -v identify >/dev/null || (sudo apt-get update && sudo apt-get install -y --no-install-recommends imagemagick)
+          ruby tools/check-data.rb
+          node tools/contrast.mjs
+
       - name: Check internal links, images and favicons
         run: |
-          gem install html-proofer -v "~> 5.0" --no-document
+          gem install html-proofer -v 5.2.2 --no-document
           htmlproofer _site --disable-external --checks Links,Images,Scripts,Favicon
 
       - name: Deploy to gh-pages

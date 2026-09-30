@@ -21,6 +21,9 @@ TYPES = ["Conference", "Journal", "Preprint", "Workshop", "Under review"].freeze
 LINK_KEYS = %w[paper arxiv oa code project].freeze
 MAX_W = 800
 MAX_BYTES = 80 * 1024
+# Common abbreviations that end in a period but don't end a sentence; blanked out before
+# counting sentence terminators in a tldr (case-sensitive, as written).
+TLDR_ABBREVIATIONS = ["e.g.", "i.e.", "vs.", "et al.", "Fig.", "Eq.", "approx."].freeze
 ERRORS = []
 
 def err(msg)
@@ -78,8 +81,11 @@ if pubs
     else
       err("#{tag}: 'year' must be an integer")
     end
-    if nonempty_string?(p["tldr"]) && p["tldr"].scan(/[.!?](?=\s|\z)/).size != 1
-      err("#{tag}: tldr must be exactly one sentence ending in . ! or ?")
+    if nonempty_string?(p["tldr"])
+      sentence_check = TLDR_ABBREVIATIONS.reduce(p["tldr"]) { |s, abbr| s.gsub(abbr, "") }
+      if sentence_check.scan(/[.!?](?=\s|\z)/).size != 1
+        err("#{tag}: tldr must be exactly one sentence ending in . ! or ?")
+      end
     end
     links = p["links"]
     if links.is_a?(Hash) && !links.empty?

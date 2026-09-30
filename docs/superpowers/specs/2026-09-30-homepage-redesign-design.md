@@ -305,6 +305,7 @@ Older items (`older: true`):
   - The hero avatar moves above the name.
   - The publications header wraps: row 1 is the title and badges, row 2 is the toggle at left and "Google Scholar →" at right.
 - **< 640px:**
+  - The navbar's inner row, cards and the footer switch to `width: calc(100% - 24px)` (a tighter gutter than the `min(1110px, 100% - 48px)` used above 640px).
   - Thumbnails go full width above the text.
   - Chips wrap.
   - The badges drop below the title.
@@ -343,9 +344,11 @@ The new `Gemfile.lock` is committed. It is resolved on local Ruby 3.2 and must i
 | `social` | `{name: Zhiyuan Li, links: [Scholar, GitHub, ORCID URLs]}` |
 | `liquid` | `{error_mode: strict, strict_filters: true}` |
 | `plugins` | `[jekyll-seo-tag, jekyll-sitemap]` |
-| `defaults` | `sitemap: false` for `assets/pdf/Li_Zhiyuan_CV_zh.pdf` and for every redirect page |
+| `twitter` | `{card: summary}`, so jekyll-seo-tag emits `twitter:card=summary` (the square avatar is not cropped to the 2:1 `summary_large_image` ratio) |
+| `defaults` | `sitemap: false` for `assets/pdf/Li_Zhiyuan_CV_zh.pdf` |
 
 - **No `description` key in `_config.yml`:** seo-tag would append it to the home title.
+- **Redirect pages set `sitemap: false` in their own front matter**, not via a `_config.yml` default: `/publications/`, `/projects/`, `/projects/compass/` and `/blog/` each carry `sitemap: false` directly, since `_layouts/redirect.html` is a standalone layout outside the `defaults` scope that covers the CV PDF.
 - **`index.html` front matter:** `layout: home`, `description: "Postdoctoral researcher at Aalto University working on multi-agent reinforcement learning, robotics and foundation models."`, `image: /assets/img/avatar.png`, and `seo: {type: Person, name: Zhiyuan Li}`.
 - **Result:** the home `<title>` is exactly "Zhiyuan Li (李志圆)", and the JSON-LD is `@type: Person` with `sameAs` from `social.links`.
 - **404.html:** sets `title: Page not found`.
@@ -354,12 +357,14 @@ The new `Gemfile.lock` is committed. It is resolved on local Ruby 3.2 and must i
 - **Triggers:**
   - `on: {push: {branches: ["**"]}, pull_request: {branches: [main]}}`. Every branch builds, so a branch push rehearses CI before merging; only `main` deploys.
   - `permissions: {contents: write}`
-  - `concurrency: {group: pages, cancel-in-progress: true}`
+  - `concurrency: {group: pages-${{ github.ref }}, cancel-in-progress: true}`. Per-ref (not a single shared `pages` group), so a branch push rehearsing CI never cancels an in-flight deploy triggered by a push to `main`.
+- **Runner:** `runs-on: ubuntu-24.04` (pinned, not `ubuntu-latest`), so a future default-image bump can't introduce a newer compiler that breaks the native gems in `Gemfile.lock`.
 - **Steps:**
-  - `actions/checkout@v4`
+  - `actions/checkout@v4` with `persist-credentials: false` — later steps install and run html-proofer, which pulls in native gems with build-time hooks, so the checkout doesn't leave a write-scoped token on disk for them.
   - `ruby/setup-ruby@v1` (`ruby-version: '3.3'`, `bundler-cache: true`)
   - `bundle exec jekyll build` with `JEKYLL_ENV=production`
-  - `gem install html-proofer -v "~> 5.0"`, then `htmlproofer _site --disable-external --checks Links,Images,Scripts,Favicon`
+  - **Check data and colors:** installs ImageMagick if `identify` isn't already on the runner, then runs `ruby tools/check-data.rb` (structure-only, no `--expect-*` counts — CI doesn't know the current paper/selected counts and shouldn't need updating every time content changes) and `node tools/contrast.mjs`.
+  - `gem install html-proofer -v 5.2.2` (pinned, not `"~> 5.0"`, for a reproducible CI install), then `htmlproofer _site --disable-external --checks Links,Images,Scripts,Favicon`
 - **Deploy step:**
   - Only runs when `github.event_name == 'push' && github.ref == 'refs/heads/main'`.
   - Uses `peaceiris/actions-gh-pages@v4` with `github_token: ${{ secrets.GITHUB_TOKEN }}`, `publish_dir: ./_site`, `publish_branch: gh-pages`.

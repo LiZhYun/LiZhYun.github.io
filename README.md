@@ -33,8 +33,16 @@ Edit `scholar:` in `_data/profile.yml` (`citations`, `h_index`, `updated`).
 
 ## Preview locally
 
-One-time setup. This machine's Ruby has no dev headers, so bundler uses the system gems and
-pure-Ruby gems go to the user gem directory:
+One-time setup, on a machine with Ruby development headers (the normal case):
+
+```sh
+bundle install
+(cd tools && npm ci)
+```
+
+**Note, for this machine specifically:** its Ruby has no dev headers, so native gems can't
+compile here. Bundler falls back to the system gems, and the one pure-Ruby gem it's missing
+goes to the user gem directory instead:
 
 ```sh
 gem install --user-install --no-document --ignore-dependencies jekyll-seo-tag -v 2.9.1
@@ -54,7 +62,12 @@ ruby tools/check-output.rb
 node tools/contrast.mjs
 node tools/browser.mjs all
 tools/check-links.sh
+tools/check-assets.sh
+tools/test/check-data.test.sh
 ```
+
+CI (`.github/workflows/deploy.yml`) also runs `check-data.rb` (structure only, no
+`--expect-*` counts) and `contrast.mjs` on every push, alongside the build and html-proofer.
 
 ## Deploy
 

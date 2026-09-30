@@ -141,7 +141,7 @@ layout: default
         <a class="shield" href="{{ p.scholar_url }}" title="{{ asof }}" aria-label="h-index: {{ sc.h_index }} ({{ asof }})"><span class="l">h-index</span><span class="r">{{ sc.h_index }}</span></a>
       </div>
     </div>
-    <span class="head-sep" aria-hidden="true"></span>
+    <span class="head-sep" aria-hidden="true" data-head-sep hidden></span>
     <div class="seg" role="group" aria-label="Publication filter" data-pub-filter hidden>
       <button type="button" data-filter="selected" aria-pressed="true">Selected</button>
       <button type="button" data-filter="all" aria-pressed="false"><span>All</span><span class="count">{{ pubs.size }}</span></button>

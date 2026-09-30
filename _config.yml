@@ -19,6 +19,9 @@ liquid:
   error_mode: strict
   strict_filters: true
 
+twitter:
+  card: summary
+
 exclude:
   - docs/
   - papers/

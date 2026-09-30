@@ -39,6 +39,8 @@
   var pubs = document.querySelector('[data-pubs]');
   var filter = pubs && pubs.querySelector('[data-pub-filter]');
   if (filter) {
+    var headSep = pubs.querySelector('[data-head-sep]');
+    if (headSep) headSep.hidden = false;
     var title = pubs.querySelector('[data-pub-title]');
     var rows = pubs.querySelectorAll('article.pub');
     var years = pubs.querySelectorAll('.pub-year');
@@ -63,9 +65,21 @@
   if (more) {
     more.hidden = false;
     more.addEventListener('click', function () {
-      document.querySelectorAll('[data-older]').forEach(function (el) { el.hidden = false; });
+      var revealed = document.querySelectorAll('[data-older]');
+      revealed.forEach(function (el) { el.hidden = false; });
       var wrap = more.parentNode;
       wrap.parentNode.removeChild(wrap);
+      // The button that held focus is now gone, so focus would fall back to
+      // <body>. Move it to the first news item just revealed instead (some
+      // [data-older] matches are year-group wrappers, not items).
+      var first = null;
+      for (var i = 0; i < revealed.length; i += 1) {
+        if (revealed[i].classList.contains('n-item')) { first = revealed[i]; break; }
+      }
+      if (first) {
+        first.setAttribute('tabindex', '-1');
+        first.focus({ preventScroll: true });
+      }
     });
   }
 })();

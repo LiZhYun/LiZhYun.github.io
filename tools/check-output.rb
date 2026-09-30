@@ -24,6 +24,7 @@ ld = home.css('script[type="application/ld+json"]').map(&:text).join
 check(ld.include?('"@type":"Person"'), "JSON-LD @type is Person")
 check(ld.include?("https://orcid.org/0000-0002-1804-3485"), "JSON-LD sameAs lists ORCID")
 check(home.at('meta[property="og:image"]')&.[]("content") == "https://lizhyun.github.io/assets/img/avatar.png", "og:image is the avatar")
+check(home.at('meta[name="twitter:card"]')&.[]("content") == "summary", "twitter:card is summary (the square avatar isn't cropped to 2:1)")
 check(home.at('meta[name="description"]')&.[]("content").to_s.start_with?("Postdoctoral researcher at Aalto University"), "meta description is set")
 check(home.css('link[rel="canonical"]').size == 1, "home has exactly one canonical link")
 check(!File.read(File.join(SITE, "index.html")).include?("†"), "no corresponding-author marks")
