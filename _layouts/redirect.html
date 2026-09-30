@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ page.redirect_to | relative_url }}">
+<link rel="canonical" href="{{ page.redirect_to | absolute_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon.png' | relative_url }}">
+</head>
+<body>
+<p>This page has moved to <a href="{{ page.redirect_to | relative_url }}">{{ page.redirect_to | absolute_url }}</a>.</p>
+</body>
+</html>
