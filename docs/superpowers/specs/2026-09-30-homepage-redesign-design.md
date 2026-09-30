@@ -344,12 +344,12 @@ The new `Gemfile.lock` is committed. It is resolved on local Ruby 3.2 and must i
 | `social` | `{name: Zhiyuan Li, links: [Scholar, GitHub, ORCID URLs]}` |
 | `liquid` | `{error_mode: strict, strict_filters: true}` |
 | `plugins` | `[jekyll-seo-tag, jekyll-sitemap]` |
-| `twitter` | `{card: summary}`, so jekyll-seo-tag emits `twitter:card=summary` (the square avatar is not cropped to the 2:1 `summary_large_image` ratio) |
 | `defaults` | `sitemap: false` for `assets/pdf/Li_Zhiyuan_CV_zh.pdf` |
 
 - **No `description` key in `_config.yml`:** seo-tag would append it to the home title.
+- **No `twitter` key in `_config.yml`:** a site-level `twitter` (e.g. `{card: summary}`) makes jekyll-seo-tag also emit `twitter:site`/`twitter:creator` from `social.name`, which are invalid without a real @handle. The `twitter.card` setting instead lives in `index.html`'s own front matter, which jekyll-seo-tag reads as `page.twitter.card` without triggering `twitter:site`/`twitter:creator`.
 - **Redirect pages set `sitemap: false` in their own front matter**, not via a `_config.yml` default: `/publications/`, `/projects/`, `/projects/compass/` and `/blog/` each carry `sitemap: false` directly, since `_layouts/redirect.html` is a standalone layout outside the `defaults` scope that covers the CV PDF.
-- **`index.html` front matter:** `layout: home`, `description: "Postdoctoral researcher at Aalto University working on multi-agent reinforcement learning, robotics and foundation models."`, `image: /assets/img/avatar.png`, and `seo: {type: Person, name: Zhiyuan Li}`.
+- **`index.html` front matter:** `layout: home`, `description: "Postdoctoral researcher at Aalto University working on multi-agent reinforcement learning, robotics and foundation models."`, `image: /assets/img/avatar.png`, `seo: {type: Person, name: Zhiyuan Li}`, and `twitter: {card: summary}` (so jekyll-seo-tag emits `twitter:card=summary` — the square avatar is not cropped to the 2:1 `summary_large_image` ratio — without a site-level `twitter:site`/`twitter:creator`).
 - **Result:** the home `<title>` is exactly "Zhiyuan Li (李志圆)", and the JSON-LD is `@type: Person` with `sameAs` from `social.links`.
 - **404.html:** sets `title: Page not found`.
 
