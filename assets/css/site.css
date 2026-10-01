@@ -332,8 +332,6 @@ a.chip { transition: border-color .15s ease, color .15s ease; }
 .chip .mono { font-family: var(--mono); font-size: 12.5px; }
 .chip .zh { font-family: var(--zh); font-size: 13px; font-weight: 400; }
 .chip .emo { font-size: 14px; }
-.chip strong { font-weight: 700; color: var(--ink); }
-.chip .dot-sep { color: var(--rt); margin: 0 1px; }
 
 /* ---------- two-column card ---------- */
 .cols { padding: 36px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: start; }

@@ -179,7 +179,7 @@ end
 
 # ---------- simple lists ----------
 {
-  "highlights" => %w[emoji bold rest], "education" => %w[institution logo degree dates],
+  "education" => %w[institution logo degree dates],
   "experience" => %w[institution logo role dates], "awards" => %w[emoji title year],
   "service" => %w[label text], "teaching" => %w[html]
 }.each do |name, keys|

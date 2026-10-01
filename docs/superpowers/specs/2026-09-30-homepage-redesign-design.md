@@ -7,7 +7,7 @@
 
 ## 1. Goal
 
-Replace the outdated al-folio site with a single, polished home page. The page shows the Sept 2026 CV content and the 14 papers listed in that CV. It uses the approved "D+" design: the wangrongsheng.github.io layout made richer with emoji, logos, highlights, colored venue badges and a light Apple-style finish, while staying professional.
+Replace the outdated al-folio site with a single, polished home page. The page shows the Sept 2026 CV content and the 14 papers listed in that CV. It uses the approved "D+" design: the wangrongsheng.github.io layout made richer with emoji, logos, colored venue badges and a light Apple-style finish, while staying professional.
 
 Other co-authored works are left out on purpose and are reachable through the Google Scholar link. These are a Scholar-listed dialogue-generation paper and arXiv 2605.31508, 2605.30211 and 2309.14792.
 
@@ -36,7 +36,7 @@ Other co-authored works are left out on purpose and are reachable through the Go
    - Subtitle: "🤖 Postdoctoral Researcher @ Aalto Robot Learning Lab, Aalto University" and "📍 Espoo, Finland".
    - Two bio paragraphs.
    - A circular avatar at right, about 150px.
-   - Three inner boxes: **📬 Social & Contacts** (chips), **🔬 Research Interests** (4 chips) and **✨ Highlights** (4 chips).
+   - Two inner boxes: **📬 Social & Contacts** (chips) and **🔬 Research Interests** (4 chips). (The ✨ Highlights box was removed at the owner's request on 2026-10-01.)
 3. **Two-column card.** Left: 🎓 Education and 💼 Experience, as rows with a logo tile, the institution, a grey role line and italic dates. Right: 🏆 Honors & Awards, 🤝 Service and 🧑‍🏫 Teaching.
 4. **📰 News card:** rows grouped by year. Each row has an emoji, the text and a date. "Show older" is described in §6.
 5. **Publications card** (`id="publications"`):
@@ -67,7 +67,6 @@ _includes/timeline-row.html  one education/experience row
 _includes/chip.html          one chip (icon, label, href, lang)
 _includes/icons/*.svg        scholar, github, orcid, email, doc (inline SVG)
 _data/profile.yml            see §5
-_data/highlights.yml         emoji, bold, rest
 _data/news.yml               see §5
 _data/publications.yml       see §4
 _data/education.yml          institution, logo, degree, dates
@@ -214,12 +213,6 @@ All links were verified on 2026-09-30.
 
 - **`interests[]`** (icon, label): Multi-Agent Systems, Reinforcement Learning, Robotics, Foundation Models.
 - **`scholar`:** `{citations: 91, h_index: 6, updated: 2026-09-30}`, updated by hand. `updated` is shown as the badges' tooltip: "Google Scholar, as of 30 Sep 2026".
-
-**`highlights.yml`**
-- 🧑‍⚖️ **Area Chair** · ICLR 2027
-- 🎤 **Oral** · AAAI 2025
-- 📄 **2 papers** · NeurIPS 2026
-- 🧑‍🏫 **Head TA** · Aalto RL course (243 students)
 
 **`news.yml`**
 - **Fields:** `date` (a quoted string, `"YYYY-MM"` or `"YYYY"`), `emoji`, `html`, `older` (bool) and `new` (bool, at most one).
