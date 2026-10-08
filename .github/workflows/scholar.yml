@@ -1,0 +1,44 @@
+name: Update Scholar numbers
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"     # Mondays 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write            # commit the new numbers
+  actions: write             # start the deploy workflow afterwards
+
+concurrency:
+  group: scholar
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Read Google Scholar
+        id: scholar
+        run: |
+          set +e
+          python3 tools/update-scholar.py
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+      # Scholar often blocks GitHub's servers. A blocked week is not a failure:
+      # the badge simply keeps the last good numbers.
+      - name: Commit and redeploy
+        if: steps.scholar.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: update Google Scholar numbers"
+          git push origin main
+          # Pushes made with the workflow token do not start other workflows,
+          # so start the deploy explicitly.
+          gh workflow run deploy.yml --ref main
