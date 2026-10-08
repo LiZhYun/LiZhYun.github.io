@@ -17,7 +17,7 @@ for l in aalto uestc ncepu; do
   [ -s "assets/img/logos/$l.png" ] && ok "logo $l" || bad "assets/img/logos/$l.png missing"
 done
 for t in retargeting sparsely-supervised-diffusion rethinking-ocl compass egoxedit default-recipe \
-         lpmc agentmixer optimappo bpta dms ocra; do
+         lpmc agentmixer optimappo bpta dms ocra cycle-consistency hierarchical-fusion; do
   f="assets/img/pubs/$t.webp"
   if [ ! -s "$f" ]; then bad "$f missing"; continue; fi
   w=$(identify -format '%w' "$f" 2>/dev/null); s=$(stat -c %s "$f")
@@ -26,5 +26,5 @@ for t in retargeting sparsely-supervised-diffusion rethinking-ocl compass egoxed
 done
 [ ! -e assets/img/publication_preview ] && ok "old previews removed" || bad "assets/img/publication_preview still present"
 [ ! -e assets/img/cropped_circle_image.png ] && ok "avatar source moved to docs/" || bad "assets/img/cropped_circle_image.png must move to docs/"
-[ -s assets/pdf/Li_Zhiyuan_CV.pdf ] && [ -s assets/pdf/Li_Zhiyuan_CV_zh.pdf ] && ok "both CVs present" || bad "a CV PDF is missing"
+[ -s assets/pdf/Li_Zhiyuan_CV_en.pdf ] && [ -s assets/pdf/Li_Zhiyuan_CV_zh.pdf ] && ok "both CVs present" || bad "a CV PDF is missing"
 exit $fail

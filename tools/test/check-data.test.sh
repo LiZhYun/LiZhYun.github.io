@@ -5,7 +5,7 @@ set -uo pipefail
 cd "$(dirname "$0")/../.."
 mkdir -p tools/out
 fail=0
-if ruby tools/check-data.rb --expect-total 14 --expect-selected 6 > tools/out/data-good.txt 2>&1; then
+if ruby tools/check-data.rb --expect-total 16 --expect-selected 6 > tools/out/data-good.txt 2>&1; then
   echo "PASS real data"
 else
   echo "FAIL real data:"; cat tools/out/data-good.txt; fail=1
@@ -36,7 +36,7 @@ ruby -ryaml -e '
   pubs.first["tldr"] = "A method, e.g. for agents, that works."
   File.write(ARGV[0], pubs.to_yaml)
 ' "$tldr_root/_data/publications.yml"
-if ruby tools/check-data.rb --root "$tldr_root" --expect-total 14 --expect-selected 6 > tools/out/data-tldr-abbrev.txt 2>&1 \
+if ruby tools/check-data.rb --root "$tldr_root" --expect-total 16 --expect-selected 6 > tools/out/data-tldr-abbrev.txt 2>&1 \
   && grep -qF "DATA OK" tools/out/data-tldr-abbrev.txt; then
   echo "PASS tldr with 'e.g.' still counts as one sentence"
 else

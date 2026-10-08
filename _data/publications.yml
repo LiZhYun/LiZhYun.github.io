@@ -44,6 +44,19 @@
     code: https://github.com/LiZhYun/ICML2026-RethinkingOCL
     project: https://magenta-sherbet-85b101.netlify.app/
 
+- title: Cycle Consistency in Video Object-Centric Learning
+  authors: [Rongzhen Zhao, Zhiyuan Li, Ruonan Wei, Juho Kannala, Joni Pajarinen]
+  venue: BMVC 2026
+  venue_key: bmvc
+  type: Conference
+  year: 2026
+  selected: false
+  thumb: cycle-consistency.webp
+  tldr: "Implicit Cycle Consistency moves the cycle-consistency constraint from slot space to the reconstruction manifold, which avoids the feature collapse caused by explicit cycle consistency on slots and outperforms those baselines on video object-centric benchmarks."
+  links:
+    paper: https://arxiv.org/abs/2605.30211
+    code: https://github.com/Genera1Z/ICC
+
 - title: Closed-Loop Vision-Language Planning for Multi-Agent Coordination
   authors: [Zhiyuan Li, Wenshuai Zhao, Joni Pajarinen]
   venue: SE@AAMAS 2026
@@ -164,6 +177,18 @@
     paper: https://doi.org/10.1609/aaai.v38i12.29277
     arxiv: https://arxiv.org/abs/2401.12574
     code: https://github.com/LiZhYun/BackPropagationThroughAgents
+
+- title: Hierarchical Fusion Framework for Multimodal Dialogue Response Generation
+  authors: [Qi Deng, Lijun Wu, Kaile Su, Wei Wu, Zhiyuan Li, Weiwei Duan]
+  venue: IJCNN 2024
+  venue_key: ijcnn
+  type: Conference
+  year: 2024
+  selected: false
+  thumb: hierarchical-fusion.webp
+  tldr: "A hierarchical fusion framework for generating responses in multimodal dialogue."
+  links:
+    paper: https://doi.org/10.1109/IJCNN60899.2024.10650044
 
 - title: Coordination as Inference in Multi-Agent Reinforcement Learning
   authors: [Zhiyuan Li, Lijun Wu, Kaile Su, Wei Wu, Yulin Jing, Tong Wu, Weiwei Duan, Xiaofeng Yue, Xiyi Tong, Yizhou Han]

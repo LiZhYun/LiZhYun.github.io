@@ -69,6 +69,8 @@
   --v-eaai: #9a3412;
   --v-apin: #1f4e79;
   --v-aamas: #6b21a8;
+  --v-bmvc: #9d174d;
+  --v-ijcnn: #3f6212;
   /* glass, background decoration, shadows */
   --nav-glass: rgba(255, 255, 255, 0.72);
   --nav-line: rgba(20, 30, 50, 0.08);
@@ -421,6 +423,8 @@ a.chip { transition: border-color .15s ease, color .15s ease; }
 .v-eaai { background: var(--v-eaai); }
 .v-apin { background: var(--v-apin); }
 .v-aamas { background: var(--v-aamas); }
+.v-bmvc { background: var(--v-bmvc); }
+.v-ijcnn { background: var(--v-ijcnn); }
 .type { height: 18px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--type-line); background: var(--type-bg); color: var(--type-text); font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: .02em; }
 .oral { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px; border-radius: 999px; border: 1px solid var(--oral-line); background: var(--oral-bg); color: var(--oral-text); font-size: 11.5px; line-height: 18px; font-weight: 700; letter-spacing: .02em; }
 .oral .emo { font-size: 12px; }

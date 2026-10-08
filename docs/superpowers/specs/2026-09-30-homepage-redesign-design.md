@@ -427,3 +427,14 @@ These must pass before the owner sees the preview. Scripts live in `tools/` and 
 - **CV source:** apply the five corrections from §4 to the CV LaTeX source, and mark the AgentMixer oral there.
 - **Scholar numbers:** automatic updates are out of scope, because Scholar blocks bots. The numbers are updated by hand.
 - **Blog:** removed. It can come back later as a separate page.
+
+## 11. Update of 2026-10-08 (October 2026 CV)
+
+- **CV file:** the English CV is now `assets/pdf/Li_Zhiyuan_CV_en.pdf`. The old `Li_Zhiyuan_CV.pdf` address is dropped on purpose and returns 404.
+- **Papers:** the site lists 16 papers (6 selected). Two were added, neither selected:
+  - "Cycle Consistency in Video Object-Centric Learning" — Rongzhen Zhao, Zhiyuan Li, Ruonan Wei, Juho Kannala, Joni Pajarinen. BMVC 2026. Paper https://arxiv.org/abs/2605.30211, code https://github.com/Genera1Z/ICC. Thumbnail: `res/fig_solution.pdf` from the arXiv e-print.
+  - "Hierarchical Fusion Framework for Multimodal Dialogue Response Generation" — Qi Deng, Lijun Wu, Kaile Su, Wei Wu, Zhiyuan Li, Weiwei Duan. IJCNN 2024. Paper https://doi.org/10.1109/IJCNN60899.2024.10650044. Thumbnail: the owner's `ijcnn24.png` (kept in `sources/`).
+- **Badge colors:** `bmvc` #9d174d, `ijcnn` #3f6212 (white text).
+- **News:** "Cycle Consistency in Video Object-Centric Learning accepted to BMVC 2026", dated 2026-08. There are now 8 current and 5 older items.
+- **Teaching:** a second line for the guest lecture (Lecture 6, Actor–Critic, advanced part, 2026).
+

@@ -74,4 +74,8 @@ to_webp "$TMP/lpmc.png" "$OUT/pubs/lpmc.webp"
 pdf_to_png papers/arxiv-2311.01953/figs/matrix_game_value.pdf "$TMP/optimappo.png"
 to_webp "$TMP/optimappo.png" "$OUT/pubs/optimappo.webp"
 
+pdf_to_png papers/arxiv-2605.30211/res/fig_solution.pdf "$TMP/icc.png"
+to_webp "$TMP/icc.png" "$OUT/pubs/cycle-consistency.webp"
+to_webp "$SRC/ijcnn24.png" "$OUT/pubs/hierarchical-fusion.webp"
+
 echo "ASSETS BUILT"

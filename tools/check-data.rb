@@ -16,7 +16,7 @@ OptionParser.new do |o|
 end.parse!
 
 ROOT = opts[:root]
-VENUE_KEYS = %w[neurips icml aaai arxiv nn tnsm eaai apin aamas tpami].freeze
+VENUE_KEYS = %w[neurips icml aaai arxiv nn tnsm eaai apin aamas tpami bmvc ijcnn].freeze
 TYPES = ["Conference", "Journal", "Preprint", "Workshop", "Under review"].freeze
 LINK_KEYS = %w[paper arxiv oa code project].freeze
 MAX_W = 800

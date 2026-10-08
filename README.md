@@ -10,7 +10,7 @@ A small Jekyll 4 site. All content lives in `_data/*.yml`; the page itself is
 1. Make a thumbnail (WebP, at most 800 px wide and 80 KB):
    `cwebp -q 80 -resize 800 0 figure.png -o assets/img/pubs/my-paper.webp`
 2. Add an entry to `_data/publications.yml` under its year (newest year first). Copy an
-   existing entry. `venue_key` picks the badge color (`neurips icml aaai arxiv nn tnsm eaai apin aamas tpami`);
+   existing entry. `venue_key` picks the badge color (`neurips icml aaai arxiv nn tnsm eaai apin aamas tpami bmvc ijcnn`);
    `type` is `Conference`, `Journal`, `Preprint`, `Workshop` or `Under review`; links are full `https://` URLs.
 3. `selected: true` shows it in the Selected view. `new: true` adds the 🔥 tag — keep it on one paper only.
 4. Update the counts in the check command below (`--expect-total`, `--expect-selected`).
@@ -56,7 +56,7 @@ Then run `bundle exec jekyll serve` and open http://127.0.0.1:4000.
 
 ```sh
 tools/build.sh
-ruby tools/check-data.rb --expect-total 14 --expect-selected 6
+ruby tools/check-data.rb --expect-total 16 --expect-selected 6
 ruby tools/check-internal.rb
 ruby tools/check-output.rb
 node tools/contrast.mjs

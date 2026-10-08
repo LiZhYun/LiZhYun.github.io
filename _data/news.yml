@@ -7,6 +7,9 @@
 - date: "2026"
   emoji: "🧑‍⚖️"
   html: "Serving as Area Chair for ICLR 2027."
+- date: "2026-08"
+  emoji: "🎉"
+  html: '<a href="https://arxiv.org/abs/2605.30211">Cycle Consistency in Video Object-Centric Learning</a> accepted to BMVC 2026.'
 - date: "2026-05"
   emoji: "🎉"
   html: '<a href="https://proceedings.mlr.press/v306/li26js.html">Rethinking Temporal Consistency in Video Object-Centric Learning</a> accepted to ICML 2026.'

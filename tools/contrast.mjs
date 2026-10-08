@@ -79,7 +79,7 @@ const PAIRS = [
   ['--on-accent', '--accent'], ['--on-shield', '--shield-l'],
   ['--accent', '--accent-wash'], ['--accent-ink', '--accent-wash'],
   ['--ink', '--pub-hover'], ['--text-2', '--pub-hover'], ['--muted', '--pub-hover'], ['--muted-2', '--pub-hover'], ['--accent', '--pub-hover'],
-  ...['neurips', 'icml', 'aaai', 'arxiv', 'nn', 'tnsm', 'tpami', 'eaai', 'apin', 'aamas'].map((v) => ['--on-badge', `--v-${v}`]),
+  ...['neurips', 'icml', 'aaai', 'arxiv', 'nn', 'tnsm', 'tpami', 'eaai', 'apin', 'aamas', 'bmvc', 'ijcnn'].map((v) => ['--on-badge', `--v-${v}`]),
 ];
 for (const [name, T] of [['light', L], ['dark', D]]) {
   const ground = parse(T['--ground']);

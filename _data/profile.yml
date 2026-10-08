@@ -21,7 +21,7 @@ chips:
   - {icon: scholar, label: Google Scholar, href: "https://scholar.google.com/citations?user=1GYbhX0AAAAJ"}
   - {icon: github, label: GitHub, href: "https://github.com/LiZhYun"}
   - {icon: orcid, label: ORCID, href: "https://orcid.org/0000-0002-1804-3485"}
-  - {icon: doc, label: CV, href: /assets/pdf/Li_Zhiyuan_CV.pdf}
+  - {icon: doc, label: CV, href: /assets/pdf/Li_Zhiyuan_CV_en.pdf}
   - {icon: doc, label: 中文简历, href: /assets/pdf/Li_Zhiyuan_CV_zh.pdf, lang: zh}
 interests:
   - {icon: agents, label: Multi-Agent Systems}

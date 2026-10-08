@@ -33,7 +33,7 @@ check(!File.read(File.join(SITE, "index.html")).include?("†"), "no correspondi
 
 sitemap = File.read(File.join(SITE, "sitemap.xml"))
 check(sitemap.include?("<loc>https://lizhyun.github.io/</loc>"), "sitemap lists the home page")
-check(sitemap.include?("Li_Zhiyuan_CV.pdf"), "sitemap lists the English CV")
+check(sitemap.include?("Li_Zhiyuan_CV_en.pdf"), "sitemap lists the English CV")
 %w[Li_Zhiyuan_CV_zh.pdf /publications/ /projects/ /blog/ 404.html].each { |s| check(!sitemap.include?(s), "sitemap omits #{s}") }
 robots_path = File.join(SITE, "robots.txt")
 check(File.exist?(robots_path) && File.read(robots_path).include?("Sitemap: https://lizhyun.github.io/sitemap.xml"), "robots.txt points to the sitemap")
