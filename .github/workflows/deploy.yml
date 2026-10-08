@@ -5,7 +5,6 @@ on:
     branches: ["**"]        # every branch builds; only main deploys (see the last step)
   pull_request:
     branches: [main]
-  workflow_dispatch:         # started by the Scholar updater after it commits new numbers
 
 permissions:
   contents: write           # needed to push the built site to gh-pages
@@ -44,7 +43,7 @@ jobs:
           htmlproofer _site --disable-external --checks Links,Images,Scripts,Favicon
 
       - name: Deploy to gh-pages
-        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

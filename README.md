@@ -31,10 +31,12 @@ Move `new: true` to the newest item. Items with `older: true` stay behind "Show 
 
 Edit `scholar:` in `_data/profile.yml` (`citations`, `h_index`, `updated`).
 
-This also happens automatically: the "Update Scholar numbers" workflow runs every Monday,
-reads your Scholar page with `tools/update-scholar.py`, and commits and redeploys when the
-numbers changed. Google Scholar sometimes blocks GitHub's servers; on those weeks the badge
-keeps its last numbers. To run it now: GitHub → Actions → Update Scholar numbers → Run workflow.
+Or let the helper fill them in from your Scholar page (run it on your own machine; Google
+Scholar blocks GitHub's servers, so this is not automated):
+
+```sh
+python3 tools/update-scholar.py && git commit -am "chore: update Google Scholar numbers" && git push
+```
 
 ## Preview locally
 
